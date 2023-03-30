@@ -15,7 +15,7 @@ const name = 'Giles';
 `Hello ${name};
 ```
 
-Ctl + C to exit the read-evaluate-print loop (REPL) console. 
+```Ctl + C``` to exit the **read-evaluate-print loop (REPL)** console. 
 
 ### Your First Console App
 

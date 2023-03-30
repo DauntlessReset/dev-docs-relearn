@@ -29,7 +29,6 @@ Creates a new commit with the staged changes and the given message. A commit is 
 
 Leaving out the **-m** flag will open the editor for you to record your commit message in more detail. 
 
-
 ## Branching
 
 ### ```git branch```
@@ -49,15 +48,12 @@ Will display the remote tracking branches (if any) for each local branch. Remote
 - ```git branch --all``` 
 
 Shows all branches including remote tracking branches. Can also use shortcut **-a**. Can be combined with **-v** or **-vv**. 
-
 ### ```git switch <branch-name>```
 
 Switch to the given branch. 
-
 ### ```git merge <branch-name>``` 
 
 Merges the given branch into the currently selected (active) branch. Can also be written explicitly: ```git merge <target-branch> <source-branch>```. 
-
 
 ## Logging
 
@@ -70,10 +66,7 @@ Shows the commit history of our repository, by default, listing all the commits 
 - ```git log --oneline --all --graph``` - Creates an acyclic graph of the entire (--all) commit history. Alias **loga**. 
 
 -  ```git log --stat``` - Shows which files were modified in each commit, along with the number of lines added or removed. 
-
-
 ## Comparing
-
 ### ```git diff``` 
 
 Compares the working directory with the index and shows changes.
@@ -101,8 +94,6 @@ Compares differences between commits using commit IDs.
 - ```git diff HEAD~1 HEAD```
 
 Compare differences between heads. See [HEAD references](/git/git-glossary#head). 
-
-
 ## Undoing 
 
 ### ```git restore```
@@ -116,7 +107,6 @@ Restores a specific file only.
 - ```git restore --staged <file-name>```
 
 Unstages the specified file, replacing the contents of the files in the index with the version last committed from the object database. 
-
 ### ```git rm <file-name>```
 
 Deletes file from current working directory and removes from index. Use commit to confirm the deletion, or restore to abort it. 

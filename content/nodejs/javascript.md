@@ -3,9 +3,12 @@ title: JavaScript
 description: Javascript - Basic Commands
 ---
 
-
+### Logging 
 
 ```console.log(5)```
+
+```console.log("text")```
+
 
 ### Commenting
 

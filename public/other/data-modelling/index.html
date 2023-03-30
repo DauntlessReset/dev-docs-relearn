@@ -7,20 +7,20 @@
     <meta name="generator" content="Relearn 5.12.5+tip">
     <meta name="description" content="Basic concepts and definitions of Data Modelling">
     <title>Data Modelling :: </title>
-    <link href="/images/favicon.ico?1680145457" rel="icon" type="image/x-icon">
+    <link href="/images/favicon.ico?1680146883" rel="icon" type="image/x-icon">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1680145457" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1680145457" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1680145457" rel="stylesheet">
-    <link href="/css/auto-complete.css?1680145457" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1680145457" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1680145457" rel="stylesheet">
-    <link href="/css/fonts.css?1680145457" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1680145457" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1680145457" rel="stylesheet">
-    <link href="/css/theme-auto.css?1680145457" rel="stylesheet" id="variant-style">
-    <link href="/css/variant.css?1680145457" rel="stylesheet">
-    <link href="/css/print.css?1680145457" rel="stylesheet" media="print">
-    <link href="/css/ie.css?1680145457" rel="stylesheet">
-    <script src="/js/url.js?1680145457"></script>
-    <script src="/js/variant.js?1680145457"></script>
+    <link href="/css/fontawesome-all.min.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1680146883" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1680146883" rel="stylesheet">
+    <link href="/css/auto-complete.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1680146883" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1680146883" rel="stylesheet">
+    <link href="/css/fonts.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1680146883" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1680146883" rel="stylesheet">
+    <link href="/css/theme-auto.css?1680146883" rel="stylesheet" id="variant-style">
+    <link href="/css/variant.css?1680146883" rel="stylesheet">
+    <link href="/css/print.css?1680146883" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1680146883" rel="stylesheet">
+    <script src="/js/url.js?1680146883"></script>
+    <script src="/js/variant.js?1680146883"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -96,10 +96,10 @@
 </ul>
 <p>In the example below we can see that the initial row is not normalised. We see that each row in the vendor table has both a primary key column and name column for bank, which does not have its own table. This will result in large amounts of redundant data as many vendors are likely to have the same bank, and each different bank will always have the same bank code.</p>
 <p>
-<a href="#image-4d44abdc016ca288690b616af9c822ad" class="lightbox-link">
+<a href="#image-a07b20a512aac38ec87d657e1ebdb5fd" class="lightbox-link">
 <img src="/images/3nf.jpeg" alt="3rd Normal Form example" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-4d44abdc016ca288690b616af9c822ad">
+<a href="javascript:history.back();" class="lightbox" id="image-a07b20a512aac38ec87d657e1ebdb5fd">
 <img src="/images/3nf.jpeg" alt="3rd Normal Form example" class="lightbox-image" loading="lazy">
 </a></p>
 <p><strong>2. Analytics Systems</strong> (Dimensional Models)</p>
@@ -110,10 +110,10 @@
 <p>A fact table usually has a huge number of rows but few columns. All information relevant to the analytics should be pulled into this table to rapid lookup.</p>
 <p>Data in fact tables is often <strong>denormalised</strong>. Denormalisation is the process of adding precomputed redundant data to an otherwise normalised relational database to improve read performance of the database.</p>
 <p>
-<a href="#image-198a8d848c988a5b5b98ced2336e2819" class="lightbox-link">
+<a href="#image-370f15f3c1ae48b5d07f17ba35ae3d3c" class="lightbox-link">
 <img src="/images/fact-table.jpeg" alt="Fact Table example" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-198a8d848c988a5b5b98ced2336e2819">
+<a href="javascript:history.back();" class="lightbox" id="image-370f15f3c1ae48b5d07f17ba35ae3d3c">
 <img src="/images/fact-table.jpeg" alt="Fact Table example" class="lightbox-image" loading="lazy">
 </a></p>
 <h3 id="important-concepts">Important concepts</h3>
@@ -133,10 +133,10 @@
 <h4 id="notation">Notation</h4>
 <p>While different notations may be used, here is a popular example:</p>
 <p>
-<a href="#image-79c6f4a5e0a53371c3ff827843747a6a" class="lightbox-link">
+<a href="#image-d9ccd74ae0552e458759a51839203c45" class="lightbox-link">
 <img src="/images/erm-notation.png" alt="Entity-Relationship Model Notation example" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-79c6f4a5e0a53371c3ff827843747a6a">
+<a href="javascript:history.back();" class="lightbox" id="image-d9ccd74ae0552e458759a51839203c45">
 <img src="/images/erm-notation.png" alt="Entity-Relationship Model Notation example" class="lightbox-image" loading="lazy">
 </a></p>
 <h4 id="dds">DDS</h4>
@@ -288,8 +288,8 @@
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1680145457" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1680145457" defer></script>
-    <script src="/js/theme.js?1680145457" defer></script>
+    <script src="/js/clipboard.min.js?1680146884" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1680146884" defer></script>
+    <script src="/js/theme.js?1680146884" defer></script>
   </body>
 </html>

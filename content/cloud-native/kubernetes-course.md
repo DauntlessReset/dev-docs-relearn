@@ -17,7 +17,7 @@ Notice that commands that begin with "minikube" handle the actual spinning up an
 
 ```minikube dashboard``` - Displays a dashboard of the current Kubernetes activity (similar to Docker Hub for Docker).
 
-TODO - insert a screenshot of this 
+![Minikube Dashboard](/images/minikube-dashboard.png)
 
 ```minikube version``` - Checks your version of Minikube. 
 
@@ -311,8 +311,7 @@ Linux Foundation Kubernetes Certification Exams
 
 ### Cluster
 
-
-Image of Cluster
+TODO: IMAGE OF CLUSTER
 
 ### Pod
 
@@ -331,7 +330,7 @@ Every Kubernetes Node runs at least:
 - Kubelet: a progcess responsible for communication between the Kubernetes control plane and the Node. It manages the pods and the containers running on the machine.
 - A container runtime (like Docker) responsible for pulling the container image from a registry, unpacking the container, and running the application. 
 
-Image of node 
+TODO: IMAGE OF NODE 
 
 ###
 
@@ -353,10 +352,10 @@ kind: Deployment
 Replicaset created automatically
 
 Deployment
- - Replicaset
+ - ReplicaSet
    - Pods 
 
-What is the difference between deployments and replicasets?
+What is the difference between Deployments and ReplicaSets? Deployments are higher level, managing ReplicaSets and providing other useful features.
 
 ```kubectl get all```
 
@@ -389,7 +388,7 @@ To see revisions and history of Rollout.
 
 or 
 
-````kubectl set image deployment/myapp-deployment nginx=nginx:1.9.1```
+```kubectl set image deployment/myapp-deployment nginx=nginx:1.9.1```
 
 ### Rollback
 
@@ -421,13 +420,13 @@ You can use wildcards e.g.
 
 
 
-###
+### TODO
 
-
+Rework pages into overview divided into sections:
 
 Kubernetes Overview
 Containers - Docker 
-Container Ochestrsation
+Container Orchestration
 Kubernetes concepts
 Pods
 ReplicaSets 

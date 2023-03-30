@@ -363,7 +363,7 @@ How to run a command across all nodes?
 
 ```kubectl run --replicas=1000 my-web-server```
 
-```kubectl rolling-update my-web-server --image=web-server:2
+```kubectl rolling-update my-web-server --image=web-server:2```
 
 ```kubectl rolling-update my-web-server --rollback```
 
@@ -373,9 +373,6 @@ The master is a node with control components installed, which is responsible for
 
 ## Docker Tips
 
-- you don't need to write the whole ID number to refer to a specific container - just enough so that it can be distinctly selected from the other containers 
+-  You don't need to write the whole ID number to refer to a specific container - just enough so that it can be distinctly selected from the other containers 
 
-- specify version
-
-capture best practices for docker 
-
+- Give the exact version when specifying an image in a build file - if a future image breaks support, you will still have a working build. 

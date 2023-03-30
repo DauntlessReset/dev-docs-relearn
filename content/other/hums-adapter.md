@@ -3,7 +3,7 @@ title: HUMS Adapter
 description: A description of the HUMS adapter purpose and structure
 ---
 
-## HUMS enabled Equipment 
+## HUMS-Enabled Equipment 
 
 Health and Usage Monitoring Systems (HUMS) is a generic term given to data collection and analysis activities that are used to help ensure the availability, reliability and safety of vehicles. 
 
@@ -32,7 +32,9 @@ An open source message broken written in Java. A message broker is a program tha
 
 General Transit Feed Specification (GTFS). A GTFS feed is composed of a series of text files collected into a ZIP file. 
 
-#### Other notes
+## Other notes
+
+TODO - add more content 
 
 boolean flag changed to revoked: true:
 

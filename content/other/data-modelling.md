@@ -37,17 +37,17 @@ Data in fact tables is often **denormalised**. Denormalisation is the process of
 
 ### Important concepts
 
-#### Entity-Relationship Model
+##### Entity-Relationship Model
 
 An entity-relationship model describes the entity types and the relationships that can exist between entities. 
 
 For example: using a supermarket transaction system, we may have entities for Customer, Sale and Store. A customer may be associated with many sales, but a sale can only be associated with one customer and store. 
 
-#### Cardinality
+##### Cardinality
 
 Cardinality describes the numerical relationship between entities. Entities may have a one-to-one, one-to-many or many-to-many relationship. 
 
-### Primary/Surrogate/Foreign Key
+##### Primary/Surrogate/Foreign Key
 
 A *primary key* is a column whose value uniquely identifies a row in the table. 
 
@@ -55,24 +55,24 @@ A *foreign key* is a column whose value corresponds to the values of the primary
 
 A *surrogate key* is a key which joins the dimension tables to the fact table. An artificially produced key is known as a surrogate key. 
 
-#### Nullability 
+##### Nullability 
 
 The ability of a value to be null. For example, a table for Employee may allow the religion field to be empty, but not the first name field. This helps ensure data integrity. 
 
-### ETL
+##### ETL
 
 Extract - Transform - Load. An ETL system should extract data from source systems, enforce data type and validity and ensure it confirms structurally to the required output format. 
 
-#### Notation
+##### Notation
 
 While different notations may be used, here is a popular example:
 
 ![Entity-Relationship Model Notation example](/images/erm-notation.png)
 
-#### DDS
+##### DDS
 
 Dimensional Data Store (Star Schemas - fact tables)
 
-### ODS
+##### ODS
 
 Operational Data Store (3NF models from remote systems)

@@ -32,20 +32,28 @@ ORDER BY rating DESC;
 
 ## Aliases
 
-TODO
+Used to give a table or column a temporary name (usually to make it more readable).
+
+```
+SELECT column_name AS alias
+FROM table_name;
+```
 
 ### Columns
 
+```
 SELECT name AS city_name
 FROM city;
+```
 
 ### Tables
 
+```
 SELECT co.name, ci.name
 FROM city AS ci
 JOIN country AS co
     ON ci.country_id = co.id;
-
+```
 
 ## Distinct
 

@@ -2,3 +2,5 @@
 .hugo_build.lock
 images/hero.xcf
 images/hero.zip
+/public
+/exampleSite

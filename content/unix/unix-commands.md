@@ -13,7 +13,7 @@ General syntax of a UNIX command:
 
 ### Navigation
 
-```pwd`` - Print working directory (pwd or cwd). Tells you were you are, in what folder. Note that while in Windows the root directory is "C:\", in UNIX the root directory is designated by "/", which elsewhere is just used as a separator inside a path. So the the directory ```/home/giles``` really means ```root/home/giles```. 
+```pwd``` - Print working directory (pwd or cwd). Tells you were you are, in what folder. Note that while in Windows the root directory is "C:\", in UNIX the root directory is designated by "/", which elsewhere is just used as a separator inside a path. So the the directory ```/home/giles``` really means ```root/home/giles```. 
 
 ```cd <directory-name>```
 
@@ -23,11 +23,11 @@ Change the present working directory (pwd) to that specified.
 
 ```cd ..```                     - Go up one directory (e.g. go into the parent folder of your **pwd**). One ```.``` simply means the current working directory. 
 
-```cd -```                      - Go *back* one directory, even if this is not the parent of the pwd. 
+```cd -```                      - Go *back* one directory, even if this is not the parent of the cwd. 
 
 ```cd /<folder>```              - Dive into a folder in the root directory (specified by "/").
 
-```cd folder/file.txt```        - Relative directory (local address based on pwd).
+```cd folder/file.txt```        - Relative directory (local address based on cwd).
 
 ```cd /bin/nano```              - Absolute directory (from root).
 
@@ -35,7 +35,7 @@ Change the present working directory (pwd) to that specified.
 
 ```cat <file>``` - Print the contents of a file to the console. 
 
-```less <file>``` - Displays a screen of the file and then stops. You can go forward one screen by pressing ```Space```, and back by pressing ```b```. Press ```q``` will quit. 
+```less <file>``` - Displays a screen of the file and then stops. You can go forward one screen by pressing ```Space```, and back by pressing ```b```. Press ```q``` to quit. 
 
 ```clear``` - Clears the terminal. Useful if things are getting too cluttered. You can still access previous commands with the arrow keys, or by scrolling in your terminal. 
 
@@ -47,11 +47,11 @@ Change the present working directory (pwd) to that specified.
 
 List directories and files in the present working directory.
 
-```-a``` - Shows all files and folders, including those hidden. Hidden files are prefixed with a ".". ```./``` refers to the current working directory, while ```../``` refers to the parent of the current working directory. 
+```-a``` - Shows all files and folders, including those hidden. Hidden files are prefixed with a ```.```. ```./``` refers to the current working directory, while ```../``` refers to the parent of the current working directory. 
 
 ```-l``` - Displays files and directories in list format.
 
-```-t``` - Sorts items by time, with those most currently modified at the top. 
+```-t``` - Sorts items by time, with those most recently modified at the top. 
 
 ```-r``` - Displays list in reverse order. 
 
@@ -89,7 +89,7 @@ Move a specified file to a new location. Can also be used to rename a file e.g `
 
 Same as move but also leaves the original copy of the file as is. Useful for leaving a backup. Can also copy multiple files to a single directory, e.g. ```cp basilisk.dat minotaur.dat unicorn.dat backup/```.
 
-```cp -r thesis thesis_backup``` - Copies a directory and all its contents (recursive option -r). 
+```cp -r thesis thesis_backup``` - Copies a directory and all its contents (recursive option ```-r```). 
 
 ```rm filename.txt``` - Deletes a file permanently. To prompt for confirmation, use the ```-i``` flag (```--interactive```). 
 
@@ -105,7 +105,7 @@ Returns all lines in a file that contain the search string.
 
 ```-i``` - Ignore case. 
 
-```-w``` - This restricts matches to lines containing a word on its own. E.g. ```grep The haiku.txt``` will return lines with the word 'Thesis', whereas ``grep -w The haiku.txt``` will not. 
+```-w``` - This restricts matches to lines containing a word on its own. E.g. ```grep The haiku.txt``` will return lines with the word 'Thesis', whereas ```grep -w The haiku.txt``` will not. 
 
 ```-v``` - Return all files/lines that **do not** contain the term (exclude).
 
@@ -120,7 +120,7 @@ dog
 dog
 ```
 
-e.g. ```ls | grep -i test``` will return all files in the pwd that contain the word test in their name, regardless of case. 
+e.g. ```ls | grep -i test``` will return all files in the cwd that contain the word test in their name, regardless of case. 
 
 You can combine ```grep``` and ```find```. This expression finds all the text files in the CWD containing the word "searching":
 
@@ -241,7 +241,7 @@ We can use head to get the first few lines of the file:
 
 ### Redirecting output 
 
-You can redirect the output of a command using '>'. 
+You can redirect the output of a command using ```>```. 
 
 ```ls > filename``` will create a file that contains the output of the ```ls``` command. 
 
@@ -253,9 +253,13 @@ You can redirect the output of a command using '>'.
 
 If you ever want to ignore the output of a command you can redirect it to the void (/dev/null).
 
-*Note: It is a very bad idea to try redirecting the output of a command that operates on a file to the same file. This may give incorrect results and/or delete the contents of ```lengths.txt```*.
-
 Note that this operation (```>```) overwrites the output file if it already exists, whereas ```>>``` simply appends to the file (if it already exists - otherwise, the result is the same).
+
+{{% notice style="warning" icon="skull" title="Warning" %}}
+
+It is a very bad idea to try redirecting the output of a command that operates on a file to the same file. This may give incorrect results and/or delete the contents of the file.
+
+{{% /notice %}}
 
 ### Wildcards
 
@@ -307,7 +311,7 @@ Shorthand can also be used by translating the binary for each string sequence. F
 
 ```alias <shortcut>="<command>"```
 
-Create a new alias (a shortcut command for a longer expression) e.g. ```alias list="ls -ltr". 
+Create a new alias (a shortcut command for a longer expression) e.g. ```alias list="ls -ltr"```. 
 
 
 ### SSH 

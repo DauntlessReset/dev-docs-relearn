@@ -3,11 +3,7 @@ title: DSLab
 description: An overview of DSLab, the Defence implementation of Cloud Pak 4 Data
 ---
 
-# DSLab
-
 Defence's implementation of Cloud Pak 4 Data. Please note when accessing documentation related to Cloud Pak 4 Data that the Defence implementation does not include all features. 
-
-# DS Lab
 
 Data Science Lab is a software suite running on an appliance located at VBM (hopefully to be replaced by a new appliance before the end of the financial year). It can be used to run data science models and perform machine learning tasks using various tools such as Jupiter notebook (using python and approved libraries) and SPSS. 
 

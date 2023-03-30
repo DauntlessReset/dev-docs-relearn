@@ -1,6 +1,6 @@
 ---
 title: Demo Page
-description: This is a demo page to showcase some of the shortcodes available in Relearn
+description: This is a demo page to showcase some of the shortcodes available in Relearn (a Hugo template)
 ---
 
 ### Tables 

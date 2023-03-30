@@ -63,9 +63,11 @@ When you have built an image it is good practice to scan it for security vulnera
 
 **Image Layering**
 
+Layering is how images are built up - one layer at a time. So if a subsequent build changes one layer, but not prior ones, these do not need to be rebuilt. 
+
 ** ** 
 
-
+TODO: Add more entries. 
 
 
 

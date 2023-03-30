@@ -12,7 +12,12 @@ To aid development and to ensure that commit messages are concise, it is strongl
 
 When merging changes into main/master, you should do this via Github instead of merging remotely and pushing the commit to remote. This is so your colleagues have a chance to examine your changes, provide any feedback and catch and issues that may exist. 
 
-***Please note that while this is normal practice, due to our small team, we do not follow this convention.***
+***Please note t***
+
+
+{{% notice style="note" title="Note" icon="pencil-alt" %}}
+While this is normal practice, due to our small team, we do not follow this convention.
+{{% /notice %}}
 
 ### **Fetch early and often**
 
