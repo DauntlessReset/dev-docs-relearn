@@ -143,6 +143,36 @@ do
 done
 ```
 
+### Find & Replace
+
+Search and replace string:
+
+```
+sed -i.suffix backup 's/<find>/<replace>/g' file
+```
+
+Example:
+
+```
+sed -i.backup 's/\"/\\\"/g' pull.secret
+```
+
+{{% notice style="note" title="Note" %}}
+
+option: ```-i.backup``` (create a backup file with the suffix of ```*.backup```)
+the above example used multiple escapes:
+
+Finds double quotes (```"```) and replaces with a backslash and double quote (```\"```).
+
+Both double quote and backslash need to be escaped: 
+
+   - ```"``` escaped is ```\"```
+
+   - ```"\``` escaped is ```\\\"```
+
+{{% /notice %}}
+
+
 #### Regular Expressions
 
 ```-E``` - Short for ```--extended-regexp```. Interpret pattern as an extended regular express (force **grep** to behave as **egrep**).
@@ -442,12 +472,3 @@ You can use the arrow keys to move line-by-line in a man page, or **B** and **Sp
 To search for a character or word on a ```man``` page, use ```/``` followed by the character or word you are searching for. If the search returns multiple hits, you can move forward through them with ```N``` or backwards with ```Shift+N```. 
 
 To quit ```man```, press ```Q```. 
-
-
-
-____
-
-
-## New unix stuff 21/03
-
-# The Unix Shell 

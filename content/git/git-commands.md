@@ -304,7 +304,9 @@ Say you are in detached HEAD state. You switch away to another branch or commit,
 
 Another way to merge. Rebase allows you to merge two branches by moving one branch on top of another, effectively merging the two without actually merging. 
 
+{{% notice style="primary" title="Warning!" icon="bomb" %}}
 Do not rebase public commits, as the commit IDs are changed by this process. 
+{{% /notice %}}
 
 ---
 

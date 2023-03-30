@@ -36,7 +36,9 @@ NOTE: You have to strip out the capitals (lowercase only) in the heading section
 
 **URL Links**
 
-A [link](http://example.com "Title").
+```
+[link](http://example.com)
+```
 
 ### Images
 
@@ -81,6 +83,8 @@ Tweak to remove most stuff from home e.g. if not .IsHome
 
 Add this string to your index file:
 
-```{{% children style="h2" description=true %}}```
+```
+{{% children style="h2" description=true %}}
+```
 
-This takes all children pages (pages in the same directory), adding links to them in a sequential list. The ```style="h2"``` option makes the links appear as headings (in this case ```h2``` headings), and the ```description=true``` option adds a description for the page underneath each link (taken from the frontmatter ```description``` text).
+This takes all children pages (pages in the same directory), adding links to them in a sequential list. The ```style="h2"``` option makes the links appear as headings (in this case ```h2``` headings), and the ```description=true``` option adds a description for the page underneath each link (taken from the front matter ```description``` text).
