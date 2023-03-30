@@ -294,11 +294,11 @@ To restore a stash: ```git stash pop --index```
 
 Again, these should only really be used if you are stuck in a bad situation such as the one described above. 
 
-### ```git relog```
+### ```git reflog```
 
 Short for reference log. Is updated every time HEAD moves. Is stored FIFO. 
 
-Say you are in detached HEAD state. You switch away to another branch or commit, but now you can't recall which commit you had checked out previously. You can use reflog to retrace your steps and retrieve the commit, even if it no longer has any references. 
+Say you are in detached HEAD state. You switch away to another branch or commit, but now you can't recall which commit you had checked out previously. You can use ```reflog``` to retrace your steps and retrieve the commit, even if it no longer has any references. 
 
 ### rebase
 
