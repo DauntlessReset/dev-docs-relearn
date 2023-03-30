@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Developer Docs Home on </title>
+    <link>/index.html</link>
+    <description>Recent content in Developer Docs Home on </description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud Native</title>
+      <link>/cloud-native/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/cloud-native/index.html</guid>
+      <description>DockerGeneral information regarding Docker
+Docker &amp;amp; KubernetesNotes from course on FreeCodeCamp - *Docker and Kubernetes* - Guy Barrette
+Docker CourseInformation from KodeKloud&amp;#39;s course *Docker Training Course for the Absolute Beginner*
+KubernetesCourse Completed on LinkedIn Learning - *Learning Kubernetes* - Kim Schlesinger
+OpenShiftOpenShift course by KodeKloud &amp;#34;OpenShift for the Absolute Beginner&amp;#34; - O&amp;#39;Reilly</description>
+    </item>
+    <item>
+      <title>Developer Docs Home</title>
+      <link>/_indexold/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/_indexold/index.html</guid>
+      <description>Cloud Native - Docker Main - Docker Course - Kubernetes Course - Docker and Kubernetes Course Git - Git Commands - Git Glossary - Git Tips Hugo - Hugo Main NodeJS - NodeJS Main UNIX - UNIX Commands and Tips Other - Data Modelling </description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>/git/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/git/index.html</guid>
+      <description>Git CommandsBasic commands for using Git
+Git GlossaryA glossary of commonly used Git Terminology
+Git TipsTips and advice for using Git</description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>/hugo/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/hugo/index.html</guid>
+      <description>Demo PageThis is a demo page to showcase some of the shortcodes available in Relearn
+HugoInformation about Hugo, the static site generator (SSG)</description>
+    </item>
+    <item>
+      <title>NodeJS</title>
+      <link>/nodejs/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/nodejs/index.html</guid>
+      <description>JavaScriptJavascript - Basic Commands
+NodeJS MainNodeJS note derived from NodeJS - Novice to Ninja</description>
+    </item>
+    <item>
+      <title>Other</title>
+      <link>/other/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/other/index.html</guid>
+      <description>Data ModellingBasic concepts and definitions of Data Modelling
+DSLabAn overview of DSLab, the Defence implementation of Cloud Pak 4 Data
+HUMS AdapterA description of the HUMS adapter purpose and structure
+Mission Capability (MC) AppA brief overview of the Mission Capability App in development
+SQL BasicsAn overview of basic SQL commands</description>
+    </item>
+    <item>
+      <title>Unix</title>
+      <link>/unix/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/unix/index.html</guid>
+      <description>UNIX Commands and TipsUNIX Commands and Tips</description>
+    </item>
+  </channel>
+</rss>

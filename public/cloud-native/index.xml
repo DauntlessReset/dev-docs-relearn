@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud Native on </title>
+    <link>/cloud-native/index.html</link>
+    <description>Recent content in Cloud Native on </description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/cloud-native/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>/cloud-native/docker-main/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/cloud-native/docker-main/index.html</guid>
+      <description>Docker 101 Tutorial Running a Container docker run -d -p 80:80 docker/&amp;lt;given-image&amp;gt;
+-d - run the container in detached mode (in the background)
+-p 80:80 - map port 80 of the host to port 80 of the container
+docker/&amp;lt;given-image&amp;gt; - the image to use
+Tip: You can combine single character flags, e.g. -dp in lieu of -d -p
+Building a Container Image Create a file named Dockerfile in the same folder as package.</description>
+    </item>
+    <item>
+      <title>Docker &amp; Kubernetes</title>
+      <link>/cloud-native/docker-kubernetes-course/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/cloud-native/docker-kubernetes-course/index.html</guid>
+      <description>Microservices Concepts Microservices Architecture A variant of the service-oriented architecture (SOA) structural style - arranges an application as a collection of loosely coupled services.
+In a microservices architecture, services are fine-grained and the protocols are lightweight.
+Monolithic Architecture Built as a single unit Deployed as a single unit Duplicated on each server Example: Three tier application, separated into different sections, but tightly coupled &amp;mdash;&amp;mdash;-Layers&amp;mdash;&amp;mdash;&amp;ndash; Web - Business - Data
+Microservices Segregates functionality into smaller separate services each with a single responsibility Scaled out by deploying each service independently Loosely coupled Can be worked on more easily by multiple teams Scaling up and down is very easy with microservices.</description>
+    </item>
+    <item>
+      <title>Docker Course</title>
+      <link>/cloud-native/docker-course/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/cloud-native/docker-course/index.html</guid>
+      <description>Docker Commands docker run &amp;lt;image&amp;gt; e.g. docker run nginx
+Creates a single container instance from an image (an image is essentially a template). To run multiple containers using the same image, simply use multiple commands.
+If the image specified is not available locally, it will be downloaded from DockerHub. This will only happen the first time, as subsequent calls will use the local image.
+docker ps e.g. docker ps -a&amp;quot;</description>
+    </item>
+    <item>
+      <title>Kubernetes</title>
+      <link>/cloud-native/kubernetes-course/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/cloud-native/kubernetes-course/index.html</guid>
+      <description>Minikube Notice that commands that begin with &amp;ldquo;minikube&amp;rdquo; handle the actual spinning up and down of the cluster, whereas everything to do with examining and interacting with the cluster is handled by the &amp;ldquo;kubectl&amp;rdquo; command.
+Minikube minikube start - Start a cluster.
+minikube stop - Stops your cluster from running.
+minikube delete - Delete your cluster.
+minikube dashboard - Displays a dashboard of the current Kubernetes activity (similar to Docker Hub for Docker).</description>
+    </item>
+    <item>
+      <title>OpenShift</title>
+      <link>/cloud-native/openshift/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/cloud-native/openshift/index.html</guid>
+      <description>OpenShift Basics OpenShift is Red Hat&amp;rsquo;s platform as a service container application.
+OpenShift Origin is based on top of Docker containers and the Kubernetes cluster manager, with added developer and operational centric tools that enable rapid application development, deployment and lifecycle management.
+Kubernetes provides self-healing and auto-scaling for containerised applications - OS abstracts over the underlying Kubernetes to help developers easily deploy and manage their applications, with many tools added to make their job easier.</description>
+    </item>
+  </channel>
+</rss>

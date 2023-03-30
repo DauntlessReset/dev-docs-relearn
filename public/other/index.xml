@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Other on </title>
+    <link>/other/index.html</link>
+    <description>Recent content in Other on </description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/other/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Modelling</title>
+      <link>/other/data-modelling/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/other/data-modelling/index.html</guid>
+      <description>In data modelling, you will mainly be dealing with two types of systems:
+1. Transactional Systems (largely modelled using 3NF (3rd Normal Form))
+Transactional systems are systems in which message flows are used to accomplish results. Examples of transactional systems would include a banking system, a recept system at a supermarket or a messaging application.
+These types of systems often used 3rd Normal Form (3NF) to arrange the data. 3NF is a database schema design which normalised data to help:</description>
+    </item>
+    <item>
+      <title>DSLab</title>
+      <link>/other/dslab/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/other/dslab/index.html</guid>
+      <description>DSLab Defence&amp;rsquo;s implementation of Cloud Pak 4 Data. Please note when accessing documentation related to Cloud Pak 4 Data that the Defence implementation does not include all features.
+DS Lab Data Science Lab is a software suite running on an appliance located at VBM (hopefully to be replaced by a new appliance before the end of the financial year). It can be used to run data science models and perform machine learning tasks using various tools such as Jupiter notebook (using python and approved libraries) and SPSS.</description>
+    </item>
+    <item>
+      <title>HUMS Adapter</title>
+      <link>/other/hums-adapter/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/other/hums-adapter/index.html</guid>
+      <description>HUMS enabled Equipment Health and Usage Monitoring Systems (HUMS) is a generic term given to data collection and analysis activities that are used to help ensure the availability, reliability and safety of vehicles.
+A number of vehicle fleets (e.g M113, some tanks and G-wagons - soon Bushmasters) are equipped with sensors that feed into the CAN bus (Controller Area Network). A HUMS device sits in front of the CAN bus, duplicating the information required from the data stream.</description>
+    </item>
+    <item>
+      <title>Mission Capability (MC) App</title>
+      <link>/other/mission-capability/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/other/mission-capability/index.html</guid>
+      <description>Purpose The Mission Capability application is a web application being developed by the team to allow soldiers in the field to easily complete vehicle capability assessments from a mobile device accessing a web page. The assessment is based on four key components:
+Lethality: The offensive ability of the vehicle (main and secondary armament). Mobility: The ability of the vehicle to traverse terrain as described in its specification. Survivability: The ability of the vehicle to withstand attack and protect crew and other occupants using both passive (e.</description>
+    </item>
+    <item>
+      <title>SQL Basics</title>
+      <link>/other/sql/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/other/sql/index.html</guid>
+      <description>Querying single table Fetch all columns from the country table:
+SELECT * FROM country; Fetch specific columns from the city table:
+SELECT id, name FROM city; Fetch city names sorted by the rating column in the default ascending order:
+SELECT name FROM city ORDER BY rating [ASC]; Fetch city names sorted by the rating column in descending order:
+SELECT name FROM city ORDER BY rating DESC; Aliases TODO
+Columns SELECT name AS city_name FROM city;</description>
+    </item>
+  </channel>
+</rss>

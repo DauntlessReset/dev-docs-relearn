@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NodeJS on </title>
+    <link>/nodejs/index.html</link>
+    <description>Recent content in NodeJS on </description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript</title>
+      <link>/nodejs/javascript/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/nodejs/javascript/index.html</guid>
+      <description>console.log(5)
+Commenting // This is a comment
+/* This is a multiline comment */ console.log(5 // this is a comment inside code);
+Properties &#39;string&#39;.length - returns length of string
+Methods console.log(&amp;#39;hello&amp;#39;.toUpperCase()); // Prints &amp;#39;HELLO&amp;#39; console.log(&amp;#39;Hey&amp;#39;.startsWith(&amp;#39;H&amp;#39;)); // Prints true console.log((&amp;#39; Hello World &amp;#39;).trim); // Removes white space Built in Objects console.log(Math.random()); // Prints a random number between 0 and 1 Math.floor(number); // Rounds down to nearest whole number Math.ceil(number); // Rounds up to nearest whole number (integer) Number.</description>
+    </item>
+    <item>
+      <title>NodeJS Main</title>
+      <link>/nodejs/nodejs-main/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/nodejs/nodejs-main/index.html</guid>
+      <description>node -v - Check installed NodeJS version
+npm -v - Check Node Package Manager version
+const name = &amp;#39;Giles&amp;#39;; `Hello ${name}; Ctl + C to exit the read-evaluate-print loop (REPL) console.
+Your First Console App The process.argv property in the standard library returns an array containing the command line arguments:
+The first element (0) is the node command itself The second element (1) is the script you&amp;rsquo;re running (hello.js) The third element (2) is the first argument passed The below program will take the first argument passed and use it as the name argument within the console log statement.</description>
+    </item>
+  </channel>
+</rss>

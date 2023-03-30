@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.111.2">
+    <meta name="generator" content="Relearn 5.12.5+tip">
+    <meta name="description" content="UNIX Commands and Tips">
+    <title>UNIX Commands and Tips :: </title>
+    <link href="/images/favicon.ico?1680145457" rel="icon" type="image/x-icon">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="/css/fontawesome-all.min.css?1680145457" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1680145457" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1680145457" rel="stylesheet">
+    <link href="/css/auto-complete.css?1680145457" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1680145457" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1680145457" rel="stylesheet">
+    <link href="/css/fonts.css?1680145457" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1680145457" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1680145457" rel="stylesheet">
+    <link href="/css/theme-auto.css?1680145457" rel="stylesheet" id="variant-style">
+    <link href="/css/variant.css?1680145457" rel="stylesheet">
+    <link href="/css/print.css?1680145457" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1680145457" rel="stylesheet">
+    <script src="/js/url.js?1680145457"></script>
+    <script src="/js/variant.js?1680145457"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='/';
+      window.variants && variants.init( [ 'auto' ] );
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/unix/unix-commands/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div class="navigation">
+            <span class="nav nav-next topbar-link"><i class="fa fa-chevron-right fa-fw"></i></span>
+          </div>
+          <div class="navigation">
+            <a class="nav nav-prev topbar-link" href="/unix/index.html" title="Unix (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Developer Docs Home</span></a><meta itemprop="position" content="1"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/unix/index.html"><span itemprop="name">Unix</span></a><meta itemprop="position" content="2"> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">UNIX Commands and Tips</span><meta itemprop="position" content="3"></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="toc-wrapper"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-unix-commands">Basic UNIX Commands</a>
+      <ul>
+        <li><a href="#navigation">Navigation</a></li>
+        <li><a href="#listing-files-and-folders">Listing files and folders</a></li>
+        <li><a href="#moving-and-renaming-files-and-folders">Moving and renaming files and folders</a></li>
+        <li><a href="#grep">Grep</a></li>
+        <li><a href="#find--replace">Find &amp; Replace</a></li>
+        <li><a href="#find">Find</a></li>
+        <li><a href="#piping">Piping</a></li>
+        <li><a href="#filtering-output">Filtering output</a></li>
+        <li><a href="#redirecting-output">Redirecting output</a></li>
+        <li><a href="#wildcards">Wildcards</a></li>
+        <li><a href="#permissions">Permissions</a></li>
+        <li><a href="#aliases">Aliases</a></li>
+        <li><a href="#ssh">SSH</a></li>
+        <li><a href="#nano">nano</a></li>
+        <li><a href="#touch">touch</a></li>
+        <li><a href="#word-count">Word Count</a></li>
+        <li><a href="#loops">Loops</a></li>
+        <li><a href="#history">History</a></li>
+      </ul>
+    </li>
+    <li><a href="#shell-scripts">Shell Scripts</a></li>
+    <li><a href="#unix-tips">UNIX Tips</a>
+      <ul>
+        <li><a href="#man">man</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+<h1 id="unix-commands-and-tips">UNIX Commands and Tips</h1>
+
+<h2 id="basic-unix-commands">Basic UNIX Commands</h2>
+<p>General syntax of a UNIX command:</p>
+<p>
+<a href="#image-5a8c6715d30935fddfffd9e51f8391d8" class="lightbox-link">
+<img src="/images/bash-cmd-syntax.jpeg" alt="Bash Command Syntax" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-5a8c6715d30935fddfffd9e51f8391d8">
+<img src="/images/bash-cmd-syntax.jpeg" alt="Bash Command Syntax" class="lightbox-image" loading="lazy">
+</a></p>
+<p><em>Note: Options may also be called switches or flags, and an argument is also called a parameter.</em></p>
+<h3 id="navigation">Navigation</h3>
+<p><code>pwd`` - Print working directory (pwd or cwd). Tells you were you are, in what folder. Note that while in Windows the root directory is &quot;C:\&quot;, in UNIX the root directory is designated by &quot;/&quot;, which elsewhere is just used as a separator inside a path. So the the directory </code>/home/giles<code>really means</code>root/home/giles```.</p>
+<p><code>cd &lt;directory-name&gt;</code></p>
+<p>Change the present working directory (pwd) to that specified.</p>
+<p><code>cd</code> or <code>cd ~</code>          - Return to your home directory.</p>
+<p><code>cd ..</code>                     - Go up one directory (e.g. go into the parent folder of your <strong>pwd</strong>). One <code>.</code> simply means the current working directory.</p>
+<p><code>cd -</code>                      - Go <em>back</em> one directory, even if this is not the parent of the pwd.</p>
+<p><code>cd /&lt;folder&gt;</code>              - Dive into a folder in the root directory (specified by &ldquo;/&rdquo;).</p>
+<p><code>cd folder/file.txt</code>        - Relative directory (local address based on pwd).</p>
+<p><code>cd /bin/nano</code>              - Absolute directory (from root).</p>
+<p><code>cd ~/data</code>                 - The tilde (<code>~</code>) character can be used at the start of a path to represent the current user&rsquo;s home directory.</p>
+<p><code>cat &lt;file&gt;</code> - Print the contents of a file to the console.</p>
+<p><code>less &lt;file&gt;</code> - Displays a screen of the file and then stops. You can go forward one screen by pressing <code>Space</code>, and back by pressing <code>b</code>. Press <code>q</code> will quit.</p>
+<p><code>clear</code> - Clears the terminal. Useful if things are getting too cluttered. You can still access previous commands with the arrow keys, or by scrolling in your terminal.</p>
+<h3 id="listing-files-and-folders">Listing files and folders</h3>
+<p><code>ls</code></p>
+<p>List directories and files in the present working directory.</p>
+<p><code>-a</code> - Shows all files and folders, including those hidden. Hidden files are prefixed with a &ldquo;.&rdquo;. <code>./</code> refers to the current working directory, while <code>../</code> refers to the parent of the current working directory.</p>
+<p><code>-l</code> - Displays files and directories in list format.</p>
+<p><code>-t</code> - Sorts items by time, with those most currently modified at the top.</p>
+<p><code>-r</code> - Displays list in reverse order.</p>
+<p><code>-s</code> - Displays size of files and directories alongside the names. Note that size will be returned in <em>blocks</em>.</p>
+<p><code>-S</code> - Sorts the files and directories by size.</p>
+<p><code>-F</code> - Classifies output by adding a marker to file and directory names to indicate whether the are a directory (trailing <code>/</code>), a link (<code>@</code>), or an executable (<code>*</code>).</p>
+<p><code>-R</code> - Recursively lists the directory hierarchy; lists all nested subdirectories.</p>
+<p><code>ls -F Desktop</code> - List the contents of a different directory (in this case Desktop).</p>
+<p><code>ls file.txt folder/notes2.txt</code> - <code>ls</code> can be given multiple paths at once.</p>
+<p>A common combination is <code>ls -ltr</code> which displays all files in a list, ordered with the most recent files at the bottom.</p>
+<h3 id="moving-and-renaming-files-and-folders">Moving and renaming files and folders</h3>
+<p><code>mkdir &lt;folder&gt;</code></p>
+<p>Make a new directory with the specified name. You can create multiple directories simultaneously also.</p>
+<p><code>-p</code> - You can specify nested sub-directories using this flag (otherwise <code>mkdir</code> will return an error):</p>
+<p><code>mkdir -p ../project/data</code></p>
+<p><code>mv &lt;source&gt; &lt;target&gt;</code></p>
+<p>Move a specified file to a new location. Can also be used to rename a file e.g <code>mv &lt;file&gt; &lt;new-name&gt;</code>. Be careful though: <code>mv</code> will silently overwrite and existing file with the same name which could lead to data loss. By default, <code>mv</code> will not ask for confirmation before overwriting files. However, adding the <code>--interactive</code> (or <code>-i</code>) flag will cause <code>mv</code> to request such confirmation. <code>mv</code> also works on directories.</p>
+<p><code>mv folder/file.txt .</code> - Moves the file into the current working directory.</p>
+<p><code>cp &lt;file&gt; &lt;file-copy&gt;</code></p>
+<p>Same as move but also leaves the original copy of the file as is. Useful for leaving a backup. Can also copy multiple files to a single directory, e.g. <code>cp basilisk.dat minotaur.dat unicorn.dat backup/</code>.</p>
+<p><code>cp -r thesis thesis_backup</code> - Copies a directory and all its contents (recursive option -r).</p>
+<p><code>rm filename.txt</code> - Deletes a file permanently. To prompt for confirmation, use the <code>-i</code> flag (<code>--interactive</code>).</p>
+<p>To remove directories, use the option <code>-r</code>.</p>
+<h3 id="grep">Grep</h3>
+<p>Grep is a contraction of &lsquo;global/regular expression/print&rsquo;, a common sequence of operations in early Unix text editors. <code>grep</code> finds and prints lines in files that match a pattern.</p>
+<p><code>grep &lt;search-term&gt; &lt;file&gt;</code></p>
+<p>Returns all lines in a file that contain the search string.</p>
+<p><code>-i</code> - Ignore case.</p>
+<p><code>-w</code> - This restricts matches to lines containing a word on its own. E.g. <code>grep The haiku.txt</code> will return lines with the word &lsquo;Thesis&rsquo;, whereas ``grep -w The haiku.txt``` will not.</p>
+<p><code>-v</code> - Return all files/lines that <strong>do not</strong> contain the term (exclude).</p>
+<p><code>-n</code> - This numbers the lines that match.</p>
+<p><code>-r</code> - <code>grep</code> will search for a pattern recursively through a set of files or subdirectories, e.g. <code>grep -r Yesterday .</code>.</p>
+<p><code>-o</code> - Short for <code>--only-matching</code>. Prints only the matched parts of an empty line, with each such part on a separate output line. e.g if the line <code>Rex the dog was a good dog</code> was searched with <code>grep -o dog file.txt</code>, the result would be:</p>
+<pre tabindex="0"><code>dog
+dog
+</code></pre><p>e.g. <code>ls | grep -i test</code> will return all files in the pwd that contain the word test in their name, regardless of case.</p>
+<p>You can combine <code>grep</code> and <code>find</code>. This expression finds all the text files in the CWD containing the word &ldquo;searching&rdquo;:</p>
+<pre tabindex="0"><code>grep &#34;searching&#34; $(find . -name &#34;*.txt&#34;)
+</code></pre><p>It is important to note that the shell first resolves whatever is inside <code>$()</code> and then feeds that into the external command as an argument.</p>
+<h4 id="grep-in-script">Grep in Script</h4>
+<p><code>grep</code> can be used in scripts to perform searches, and can be combined with <code>wc</code> for frequency analysis.</p>
+<p>This example returns how often each sister was mentioned in <em>Little Women</em>:</p>
+<pre tabindex="0"><code>for sis in Jo Meg Beth Any
+do
+    echo $sis;
+    grep -ow $sis LittleWomen.txt | wc -l 
+done
+</code></pre><h3 id="find--replace">Find &amp; Replace</h3>
+<p>Search and replace string:</p>
+<pre tabindex="0"><code>sed -i.suffix backup &#39;s/&lt;find&gt;/&lt;replace&gt;/g&#39; file
+</code></pre><p>Example:</p>
+<pre tabindex="0"><code>sed -i.backup &#39;s/\&#34;/\\\&#34;/g&#39; pull.secret
+</code></pre>
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-exclamation-circle"></i> Note</div>
+  <div class="box-content">
+<p>option: <code>-i.backup</code> (create a backup file with the suffix of <code>*.backup</code>)
+the above example used multiple escapes:</p>
+<p>Finds double quotes (<code>&quot;</code>) and replaces with a backslash and double quote (<code>\&quot;</code>).</p>
+<p>Both double quote and backslash need to be escaped: </p>
+<p>   - <code>&quot;</code> escaped is <code>\&quot;</code></p>
+<p>   - <code>&quot;\</code> escaped is <code>\\\&quot;</code></p>
+  </div>
+</div>
+<h4 id="regular-expressions">Regular Expressions</h4>
+<p><code>-E</code> - Short for <code>--extended-regexp</code>. Interpret pattern as an extended regular express (force <strong>grep</strong> to behave as <strong>egrep</strong>).</p>
+<pre tabindex="0"><code>grep -E &#34;^.o&#34; haiku.txt
+</code></pre><p>This will return all lines that have an &lsquo;o&rsquo; in the second position. Quotes are used to prevent the shell from trying to interpret the string. The <code>^</code> anchors the match to the start of the line, while the <code>.</code> matches a single character (like <code>?</code> in the shell).</p>
+<h3 id="find">Find</h3>
+<p>The <code>find</code> command finds files.</p>
+<p><code>find .</code> will return everything in the current working directory.</p>
+<p><code>find . -type d</code> will return all directories in the CWD.</p>
+<p><code>find . -type f</code> will return all files in the CWD.</p>
+<p><code>find . -name &quot;*.txt&quot;</code> will return all files with the <code>.txt</code> suffix. Make sure to include the quotes around <code>*.txt</code> otherwise the command will not have the desired result (due to the shell expanding the <code>*</code> wildcard).</p>
+<p>You can combine <code>find</code> and <code>wc</code>:</p>
+<pre tabindex="0"><code>wc -l $(find . -name &#34;*.txt&#34;)
+</code></pre><p>This command will count the lines in all the files with the suffix <code>.txt</code> in the current working directory and print all the information.</p>
+<h3 id="piping">Piping</h3>
+<p>A pipe connects two commands together, using the output of one command as the input of the next command. For example:</p>
+<p><code>ls | grep test</code></p>
+<p>Takes the list of all file names gathered by <code>ls</code> and searches them for the term test, outputting the results.</p>
+<p>Examples:</p>
+<p><code>sort -n lengths.txt | head -n 1</code> - This sorts the lines in <code>lengths.txt</code> numerically, then takes the first line of that result (which will be the entry with the smallest value).</p>
+<p><code>wc -l *.pdb | sort -n | head -n 1</code> - This counts the lines of each file in the working directory ending with the <code>.pde</code> extension, then sorts them in ascending numerical order. The first value is then output (the one at the top of the list given by <code>sort -n</code>). You could say this as &lsquo;head of the sort of line count of <code>*.pdb</code>&rsquo;.</p>
+<p><code>wc -l * | sort -n | head -n 3</code>- Find the three files which have the least number of lines.</p>
+<h3 id="filtering-output">Filtering output</h3>
+<p><code>sort &lt;file&gt;</code></p>
+<p>Sorts alphanumerically. This does not change the file, it simply sends the sorted result to the screen. To put in a file:</p>
+<p><code>sort -n lengths.txt &gt; sorted-lengths.txt</code></p>
+<p><code>-n</code> - short for <code>--numeric-sort</code>. Sorts by number value.</p>
+<p>We can use head to get the first few lines of the file:</p>
+<p><code>head -n 3 sorted-lengths.txt</code> - returns the first 3 lines of the file. The opposite command is <code>tail</code> which retrieves the last few lines of a file.</p>
+<p><code>cut -d , -f 2 animals.csv</code> - The <code>cut</code> command is used to remove or <code>cut out</code> certain sections of each line in the file. In the above example we use the <code>-d</code> option to specify the comma as our delimiter character, and the <code>-f</code> option to specify that we want to extract the second field (column).</p>
+<p><code>uniq &lt;file&gt;</code> - The <code>uniq</code> command filters out <strong>adjacent</strong> matching lines in a file.</p>
+<p><code>cut -d , -f 2 animals.csv | sort | uniq</code> - Will return only unique animals from the list. To return a count of the number of occurrences of each unique animal, use the <code>uniq -c</code> command.</p>
+<h3 id="redirecting-output">Redirecting output</h3>
+<p>You can redirect the output of a command using &lsquo;&gt;&rsquo;.</p>
+<p><code>ls &gt; filename</code> will create a file that contains the output of the <code>ls</code> command.</p>
+<p><code>&gt;&gt;</code> is similar to the previous command but will append to the end of the file.</p>
+<p><code>1&gt;</code> will output the exit code to a file e.g. 0 for success, anything else if the command fails.</p>
+<p><code>2&gt;</code> will output only the error messages to the file.</p>
+<p>If you ever want to ignore the output of a command you can redirect it to the void (/dev/null).</p>
+<p><em>Note: It is a very bad idea to try redirecting the output of a command that operates on a file to the same file. This may give incorrect results and/or delete the contents of <code>lengths.txt</code></em>.</p>
+<p>Note that this operation (<code>&gt;</code>) overwrites the output file if it already exists, whereas <code>&gt;&gt;</code> simply appends to the file (if it already exists - otherwise, the result is the same).</p>
+<h3 id="wildcards">Wildcards</h3>
+<p><code>*</code> is a <strong>wildcard</strong>, which represents zero or more characters. For example:</p>
+<p><code>*.png</code> represents <code>alien.png</code>, <code>bigfoot.png</code>, etc. Because it can represent no characters, <code>*ethane</code> would return <code>ethane</code> and <code>methane</code>.</p>
+<p><code>*saur.png</code> represents <code>Allosaur.png</code>, <code>Stegosaur.png</code>, <code>saur.png</code> and so on.
+<code>?</code> is also a wildcard, but represents one wild character specifically. For example:</p>
+<p><code>?man</code> would represent <code>Gman</code> or <code>iman</code>, whereas <code>????saur</code> would represent <code>dinosaur</code> and <code>allosaur</code> but not <code>tyrannosaur</code>.</p>
+<h3 id="permissions">Permissions</h3>
+<p><code>chmod a+rwx &lt;filename&gt;</code></p>
+<p>
+<a href="#image-2163ae4d63573157df8b314cea0eb5a4" class="lightbox-link">
+<img src="/images/permissions.jpeg" alt="image" style="height: auto; width: auto;" loading="lazy">
+</a>
+<a href="javascript:history.back();" class="lightbox" id="image-2163ae4d63573157df8b314cea0eb5a4">
+<img src="/images/permissions.jpeg" alt="image" class="lightbox-image" loading="lazy">
+</a></p>
+<p>When you use a command such as <code>ls -ltr</code> you will see that each file has a string prefix with lots of letters. The first character relates to the nature of the file (d indicating directory) while the rest relates to permissions.</p>
+<p>Each 3 character set represents the permissions of the user (the owner of the file), the group (the group the owner is part of) and others (anyone not either the owner or part of the group) in that order (uuugggooo).</p>
+<p>&lsquo;r&rsquo; indicates read permission, &lsquo;w&rsquo; indicates write permission while &lsquo;x&rsquo; indicates execute permission.</p>
+<p>To change permissions, simply use the chmod command e.g. <code>chmod u+rw</code> (add read and write permissions for the user) or <code>chmod o-x</code> (remove execution permission from other).</p>
+<p>Shorthand can also be used by translating the binary for each string sequence. For example, a permission string of rw- would be translated into binary 110. This, when translated to decimal, would be 6. So to give yourself and your group read and write permissions, and everyone else nothing, use <code>chmod 600 &lt;filename&gt;</code>.</p>
+<p>0: (000) No permission.</p>
+<p>1: (001) Execute permission.</p>
+<p>2: (010) Write permission.</p>
+<p>3: (011) Write and execute permissions.</p>
+<p>4: (100) Read permission.</p>
+<p>5: (101) Read and execute permissions.</p>
+<p>6: (110) Read and write permissions.</p>
+<p>7: (111) Read, write, and execute permissions.</p>
+<h3 id="aliases">Aliases</h3>
+<p><code>alias &lt;shortcut&gt;=&quot;&lt;command&gt;&quot;</code></p>
+<p>Create a new alias (a shortcut command for a longer expression) e.g. ```alias list=&ldquo;ls -ltr&rdquo;.</p>
+<h3 id="ssh">SSH</h3>
+<p><code>ssh &lt;address&gt;</code></p>
+<p>Allows a connection to a remote computer (specified by &lt;address&gt;).</p>
+<h3 id="nano">nano</h3>
+<p>Nano is a basic text editor often available from the command line.</p>
+<p><code>nano note.txt</code> - Opens an empty text file called &ldquo;note.txt&rdquo; in the current working directory.</p>
+<p>&ldquo;Ctrl+O&rdquo; - Save the current document (you can change the name if desired).</p>
+<p>&ldquo;Ctrl+X&rdquo; - Quit the editor and return to the shell.</p>
+<h3 id="touch">touch</h3>
+<p><code>touch note.txt</code> - Creates an empty text file taking up no space. This is useful if a program will not generate a file itself, instead requiring an existing file to populate with its output.</p>
+<h3 id="word-count">Word Count</h3>
+<p><code>wc &lt;file&gt;</code></p>
+<p>Returns the number of lines, words and characters in files, returning the values in that order from left to right. You can also search multiple files:</p>
+<p><code>wc *.txt</code></p>
+<p>Returns the lines, words and characters for each file with the txt extension in the current working directory (in a list). The total number of lines, words and characters will be shown at the bottom of the list.</p>
+<p><code>-l</code> - Will only show the number of lines per file.
+<code>-m</code> - will only show the number of characters.
+<code>-w</code> - will only show the number of words.</p>
+<p><code>wc</code> with or without a flag and no filename will wait for input at the command line. Escape using Ctrl+C.</p>
+<p>To capture the output from these commands:</p>
+<p><code>wc -l *.txt &gt; lengths.txt</code> - Saves the number of lines from each txt file in the directory into a new file called lengths.txt.</p>
+<h3 id="loops">Loops</h3>
+<p>Looping is a great way to programmatically cut down on repetitive tasks, such as performing the same action on many files. To loop through three files in our creatures directory and print the second line of each file (along with the filename):</p>
+<pre tabindex="0"><code>for filename in basilisk.dat minotaur.dat unicorn.dat
+do 
+    echo $filename
+    head -n 2 $filename | tail -n 1
+done
+</code></pre><p>Backup files (creates copies e.g. &ldquo;original-unicorn.dat&rdquo;).</p>
+<pre tabindex="0"><code>for filename in *.dat
+do 
+    cp $filename original-$filename
+done
+</code></pre><p>To check if it&rsquo;s working correctly before running it, use <code>echo</code> in front of the command to see how it will execute:</p>
+<pre tabindex="0"><code>for filename in *.dat
+do 
+    echo cp $filename original-$filename
+done
+</code></pre><p>or</p>
+<pre tabindex="0"><code class="language-for" data-lang="for">do
+    echo &#34;cat $datafile &gt;&gt; all.pdb```
+done
+</code></pre><h4 id="nested-loops">Nested loops</h4>
+<pre tabindex="0"><code>for species in cubane methane ethane
+do
+    for temp in 25 30 37 40
+    do
+        mkdir $species-$temp
+    done
+done
+</code></pre><h3 id="history">History</h3>
+<p>The <code>history</code> command retrieves a list of the last few hundred commands that have been executed. You can use <code>!123</code> (where &lsquo;123&rsquo; is replaced by the command number shown by <code>history</code>) to repeat a command.</p>
+<p>You can also search history by using <code>Ctrl+R</code> and typing the search term. Press <code>Ctrl+R</code> repeatedly to scroll through earlier hits. Press an arrow key to select a command, and press <code>Return</code> to run the command).</p>
+<p><code>history | tail -n 5</code> - Returns the last 5 commands run.
+<code>!459</code> - Returns command 459 from the history.</p>
+<p><code>!!</code> - Retrieves the immediately preceding command.</p>
+<p><code>!$</code> - Retrieves the last word of the last command.</p>
+<p>You can even save previous commands into a new shell script:</p>
+<pre tabindex="0"><code>history | tail -n 5 &gt; redo-figure.sh
+</code></pre><p>Note: Remember that the shell always adds commands to the log <em>before</em> running them. This is useful in the event that the command results in a crash, in which case the log can be investigated to determine the cause.</p>
+<h2 id="shell-scripts">Shell Scripts</h2>
+<p>Shell scripts are just small programs written into a file.</p>
+<p><code>sh &lt;script&gt;.sh</code> runs the commands saved i a file.</p>
+<p><code>$1</code>, <code>$2</code> etc refer to the first argument, second argument and so on. <code>$@</code> refers to all of the shell script&rsquo;s command-line arguments (remember to place variables in quotes if the values might have spaces in them).</p>
+<p>To debug shell scripts use the <code>-x-</code> flag:
+<code>sh -x &lt;script&gt;.sh &lt;arg1&gt; &lt;arg2&gt;</code></p>
+<h2 id="unix-tips">UNIX Tips</h2>
+<ul>
+<li>
+<p>Pressing the up arrow will recall the previous command</p>
+</li>
+<li>
+<p>Use the tab key to complete filenames. Pressing tab with no leading character e.g. <code>ls </code> will loop through all the file/folder names in the directory.</p>
+</li>
+<li>
+<p>Move to the beginning of a line in the shell using <code>Ctrl+A</code> or to the end using <code>Ctrl+E</code>.</p>
+</li>
+<li>
+<p>A semicolon <code>;</code> can be used to separate two commands written on a single line.</p>
+</li>
+<li>
+<p>Don&rsquo;t use spaces in filenames. Separate words using <code>-</code> or <code>_</code>. Don&rsquo;t lead with these characters and don&rsquo;t use any other special characters in filenames, except for <code>.</code>.</p>
+</li>
+<li>
+<p>If you need to refer to a file or folder with spaces in the name, use quotes e.g. <code>cd &quot;My Folder&quot;</code>.</p>
+</li>
+<li>
+<p>When editing files ensure you create a backup copy in case something goes wrong e.g. <code>cp filename.txt filenamebackup.txt</code></p>
+</li>
+<li>
+<p>Use the forward slash to refer to the root directory when specifying an absolute directory</p>
+</li>
+<li>
+<p>If you want to see the scripts tied to commands, these are stored in the binaries directory (<code>cd /bin</code>). This can be useful if you are not sure what is available.</p>
+</li>
+</ul>
+<ul>
+<li>If things aren’t working correctly, one of these is likely the culprit:</li>
+</ul>
+<ol>
+<li>Memory usage</li>
+<li>Storage usage</li>
+<li>CPU usage</li>
+</ol>
+<ul>
+<li>
+<p>You will need to change passwords about once a month for many Defence systems. You will not receive a notification - your password will simply stop working. It&rsquo;s a good idea to set a calendar reminder so you can change all your passwords at the same time. The command <code>passwd</code> - begins the password change process.</p>
+</li>
+<li>
+<p>Deleting is forever. The Unix shell doesn&rsquo;t have a trash bin. When files are deleted, they are unlinked from the file system so that their storage space on disk can be recycled. Tools for finding and recovering deleted files do exist, but there&rsquo;s no guarantee they&rsquo;ll work in any particular situation, since the computer may recycle the file&rsquo;s disk space immediately.</p>
+</li>
+<li>
+<p>Try using the <code>man &lt;command&gt;</code> or <code>--help</code> (e.g. <code>grep --help</code>) if you need more information.</p>
+</li>
+</ul>
+<h3 id="man">man</h3>
+<p><code>man</code>, short for manual, is useful when you want to find out more about a specific command.</p>
+<p>e.g. <code>man ls</code></p>
+<p>You can use the arrow keys to move line-by-line in a man page, or <strong>B</strong> and <strong>Spacebar</strong> to skip up or down a full page.</p>
+<p>To search for a character or word on a <code>man</code> page, use <code>/</code> followed by the character or word you are searching for. If the search returns multiple hits, you can move forward through them with <code>N</code> or backwards with <code>Shift+N</code>.</p>
+<p>To quit <code>man</code>, press <code>Q</code>.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+          <style>
+            #logo svg,
+            #logo svg * {
+              color: #282828;
+              color: var(--MENU-SECTIONS-BG-color);
+              fill: #282828 !important;
+              fill: var(--MENU-SECTIONS-BG-color) !important;
+              opacity: .945;
+            }
+            a#logo {
+              color: #282828;
+              color: var(--MENU-SECTIONS-BG-color);
+              font-family: 'Work Sans', 'Helvetica', 'Tahoma', 'Geneva', 'Arial', sans-serif;
+              font-size: 1.875rem;
+              font-weight: 300;
+              margin-top: -.8125rem;
+              max-width: 60%;
+              text-transform: uppercase;
+              width: 14.125rem;
+              white-space: nowrap;
+            }
+            a#logo:hover {
+              color: #282828;
+              color: var(--MENU-SECTIONS-BG-color);
+            }
+            #logo svg {
+              margin-bottom: -1.25rem;
+              margin-inline-start: -1.47rem;
+              width: 40.5%;
+            }
+            @media only all and (max-width: 60rem) {
+              a#logo {
+                font-size: 1.5625rem;
+                margin-top: -.1875rem;
+              }
+              #logo svg {
+                margin-bottom: -.75rem;
+                margin-inline-start: -1.47rem;
+              }
+            }
+            @media all and (-ms-high-contrast:none) {
+              /* IE11s understanding of positioning is weird at best */
+              a#logo {
+                margin-top: -3.625rem;
+              }
+              #logo svg {
+                margin-bottom: -3.875rem;
+                margin-left: -1.47rem;
+              }
+            }
+            @media only all and (-ms-high-contrast:none) and (max-width: 60rem) {
+              #logo svg {
+                margin-left: -1.47rem;
+              }
+            }
+          </style>
+            <img src="/images/fox-abstract.png" alt="Fox Logo">
+              <path d="M46.103 136.34c-.642-.394-1.222-2.242-1.98-2.358-.76-.117-1.353.506-1.618 1.519-.266 1.012-.446 4.188.173 5.538.213.435.482.787 1.03.845.547.057.967-.504 1.45-1.027.482-.523.437-.9 1.142-.612.705.289 1.051.4 1.586 1.229.535.828 1.085 4.043.868 5.598-.241 1.458-.531 2.8-.59 4.088.26.075.517.148.772.217 2.68.724 5.373 1.037 7.873.02.001-.028.01-.105.008-.11-.048-.165-.18-.41-.36-.698-.18-.29-.414-.645-.586-1.114a3.212 3.212 0 0 1-.125-1.735c.056-.21.153-.342.249-.475 1.237-1.193 2.932-1.373 4.244-1.384.557-.004 1.389.016 2.198.255.809.239 1.706.724 2.068 1.843.187.578.114 1.17-.043 1.623-.153.438-.369.783-.545 1.091-.178.31-.329.6-.401.821-.007.02-.003.071-.005.094 2.256 1.008 4.716.91 7.189.398.55-.114 1.11-.247 1.673-.377.344-1.085.678-2.145.852-3.208.124-.752.158-2.311-.078-3.538-.118-.613-.306-1.15-.52-1.489-.221-.349-.413-.501-.747-.538-.243-.027-.51.013-.796.098-.67.223-1.33.606-1.966.76l-.008.002-.109.032c-.556.152-1.233.158-1.797-.36-.556-.51-.89-1.367-1.117-2.596-.283-1.528-.075-3.279.89-4.518l.071-.09h.07c.65-.71 1.485-.802 2.16-.599.706.213 1.333.629 1.772.84.736.354 1.185.319 1.475.171.291-.148.5-.439.668-.955.332-1.017.301-2.819.022-4.106-.148-.684-.13-1.292-.13-1.883-1.558-.463-3.067-.982-4.574-1.208-1.128-.169-2.263-.173-3.298.164-.13.046-.256.095-.38.15-.373.164-.633.342-.805.52-.077.098-.081.105-.087.21-.004.068.031.289.13.571.1.282.256.634.467 1.03.279.524.448 1.063.431 1.618a2.12 2.12 0 0 1-.499 1.309 1.757 1.757 0 0 1-.62.51h-.002c-.515.291-1.107.404-1.723.464-.86.083-1.787.026-2.598-.097-.806-.123-1.47-.28-1.948-.555-.444-.256-.79-.547-1.037-.925a2.273 2.273 0 0 1-.356-1.301c.029-.837.403-1.437.625-1.897.111-.23.191-.433.236-.583.045-.15.044-.25.046-.24-.005-.029-.127-.355-1.015-.741-1.138-.495-2.322-.673-3.533-.668h-.015a9.711 9.711 0 0 0-.521.016h-.002c-1.163.057-2.35.308-3.541.569.383 1.531.79 2.753.818 4.502-.096 1.297.158 2.114-1.03 2.935-.85.588-1.508.729-2.15.335" style="fill:#282828;fill-opacity:1;stroke:none;stroke-width:1.03763;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-40.698 -95.175)"/>
+              <path d="M61.472 101.34v.002c-.3-.003-.603.01-.894.04-.544.055-1.39.165-1.778.306-1.238.364.13 2.344.41 2.913.28.569.285 2.03.14 2.134-.144.103-.375.261-.934.345-.56.084.03-.037-1.589.086-1.62.122-5.506.29-8.265.248-.022.26-.036.521-.097.808-.309 1.442-.63 3.163-.494 4.074.071.473.168.65.414.8.23.14.737.235 1.62-.004.834-.227 1.3-.442 1.887-.456.595-.016 1.555.472 1.965.717.411.245-.03-.008.002 0s.128.05.176.102c.049.053-.276-.523.104.199.379.721.72 3.256.002 4.68-.46.913-1.01 1.49-1.64 1.711-.63.22-1.229.067-1.734-.135-.881-.353-1.584-.7-2.205-.647-1.199 1.94-1.186 4.17-.6 6.602.097.397.212.814.327 1.23 2.68-.556 5.542-1.016 8.337.132 1.064.437 1.73 1.015 1.902 1.857.169.831-.193 1.508-.438 1.986-.122.238-.23.46-.307.642-.07.164-.096.28-.104.324.069.429.309.723.686.945.385.227.89.355 1.35.423.723.104 1.567.152 2.287.086.693-.064 1.032-.338 1.241-.544a2.447 2.447 0 0 0 .303-.437.175.175 0 0 0 .013-.035c-.004-.066-.037-.246-.195-.527-.46-.816-.87-1.595-.817-2.51.028-.476.218-.938.529-1.288.304-.343.698-.586 1.186-.79 1.442-.606 2.96-.609 4.372-.409 1.525.216 2.963.679 4.378 1.083.226-2.09.784-3.9.592-5.77-.058-.565-.287-1.333-.598-1.827-.32-.508-.59-.717-1.036-.642-.648.11-1.472.935-2.707 1.078-.791.092-1.494-.267-1.95-.86-.45-.583-.678-1.335-.78-2.101-.202-1.525.031-3.229.89-4.27.615-.747 1.45-.887 2.15-.74.687.145 1.307.492 1.857.745v-.002c.546.252 1.033.388 1.281.344a.547.547 0 0 0 .353-.188c.113-.124.242-.35.384-.75.604-1.712.206-3.68-.303-5.654-.667.145-1.336.293-2.018.413-1.341.236-2.73.392-4.136.273-.656-.055-1.695-.085-2.58-.476-.442-.195-.903-.514-1.157-1.093-.259-.591-.205-1.313.08-2.014.223-.64 1.082-2.178.692-2.585-.391-.407-1.651-.56-2.554-.571z" style="fill:#282828;fill-opacity:1;stroke:none;stroke-width:.992837;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-40.698 -95.175)"/>
+              <path d="M83.128 98.116c-.484 1.875-1.057 3.757-2.486 5.033-.638.57-1.13.666-1.483.548-.401-.134-.715-.506-1.058-.973-.338-.461-.655-.97-1.076-1.332-.192-.165-.404-.315-.683-.38-.279-.066-.599-.02-.9.102-.489.196-.89.58-1.28 1.047a6.1 6.1 0 0 0-.985 1.632c-.234.591-.356 1.174-.277 1.713.072.487.392.977.905 1.185.463.187.926.156 1.36.154.433 0 .843.01 1.242.147.55.189.79.736.822 1.368.034.66-.145 1.412-.393 1.988l-.008.021c-.74 1.705-1.946 2.893-3.004 4.349l-.664.915.979.099c.924.092 1.788.26 2.468.675.46.281 1.806 1.205 2.794 2.222.497.513.888 1.031 1.047 1.502.078.231.095.422.05.6a.93.93 0 0 1-.345.474c-.301.223-.606.395-.864.532l-.354.186c-.107.058-.189.087-.345.228a.637.637 0 0 1 .062-.045l-.064.041-.209.236-.103.343s.003.126.007.152c.003.017.003.007.004.015v.002c.016.195.061.307.133.476a4.1 4.1 0 0 0 .32.596 5.7 5.7 0 0 0 2.8 2.258c.284.108.908.321 1.548.36.33.02.59.015.912-.13h.002c.08-.037.228-.095.382-.281.153-.186.19-.355.212-.445l.019-.075.003-.078c.023-.585-.037-1.296.072-1.899.153-.657.435-.956 1.009-.909 2.771.239 4.74 1.955 6.693 3.83l.742.714.279-1.155c.55-2.29 1.093-4.464 2.928-5.977.692-.57 1.184-.642 1.527-.509.39.151.676.536.996.995.319.458.605.926 1.07 1.212.194.119.464.232.784.209.32-.024.638-.163.988-.384 1.022-.645 1.778-1.756 2.086-2.942.136-.522.102-.991-.046-1.301-.158-.334-.433-.553-.754-.707-.653-.314-1.468-.373-2.094-.486-.825-.15-1.22-.475-1.345-.878-.13-.417 0-.953.335-1.61.6-1.173 1.887-2.602 3.13-3.911l.498-.526-.449-.432c-1.545-1.49-3.163-3.01-5.252-3.715h-.002c-.473-.16-1.097-.413-1.73-.424h-.003c-.311-.004-.596.04-.883.24v.002c-.22.155-.483.537-.583.937l-.008.036-.006.038c-.116.773-.06 1.467-.217 1.995-.063.212-.198.418-.359.507-.202.111-.492.153-.976.072-.582-.097-1.978-.69-3.021-1.503-.523-.407-.934-.85-1.117-1.3a1.153 1.153 0 0 1-.083-.63c.03-.184.1-.477.308-.593.21-.116.941-.32 1.377-.642h.002c.192-.141.403-.367.518-.64.114-.275.127-.526.123-.774-.006-.142-.036-.192-.08-.3a8.417 8.417 0 0 0-3-3.027c-1.226-.725-2.585-1.135-3.927-1.539-.434-.12-.844-.111-1.02.466zm.912.947c1.186.364 2.357.718 3.345 1.303 1.035.612 1.864 1.488 2.507 2.528-.514.263-1.095.5-1.44.79-.345.29-.729.914-.815 1.434-.084.509 0 .968.155 1.347.301.74.85 1.276 1.44 1.735 1.18.92 2.554 1.545 3.47 1.698.604.1 1.186.088 1.739-.216.594-.327.935-.911 1.088-1.427.264-.884.193-1.664.262-2.17h.1c.3.006.926.206 1.417.371 1.646.554 3.044 1.773 4.431 3.089-1.102 1.174-2.222 2.423-2.888 3.73-.42.823-.73 1.789-.453 2.687.283.913 1.1 1.415 2.138 1.603.691.126 1.472.226 1.84.403.19.091.258.182.278.223.03.064.058.075-.023.387-.21.804-.761 1.598-1.413 2.01-.247.155-.365.183-.407.187-.042.003-.061.002-.172-.066-.144-.088-.455-.473-.772-.929-.317-.454-.714-1.07-1.452-1.356-.783-.304-1.776-.022-2.713.75-1.942 1.6-2.626 3.764-3.146 5.8-1.802-1.676-3.772-3.138-6.589-3.517h-.002c-.346-.095-1.013-.031-1.293.143-.735.501-1.005 1.132-1.168 2.007-.125.69-.082 1.216-.074 1.659-.055.006-.046.01-.104.006-.42-.026-1.035-.215-1.244-.295-.947-.361-1.774-1.006-2.314-1.857-.054-.085-.072-.132-.109-.2l.027-.016c.284-.15.656-.36 1.045-.648.44-.327.789-.798.93-1.35a2.4 2.4 0 0 0-.068-1.379c-.254-.751-.753-1.353-1.295-1.911-1.09-1.124-2.452-2.049-2.99-2.378-.609-.372-1.303-.44-1.981-.56.875-1.094 1.878-2.251 2.596-3.921.294-.823.543-1.907.513-2.658-.049-.97-.489-2.013-1.52-2.367-.579-.2-1.131-.204-1.58-.203-.45.002-.786-.006-.97-.08h-.002c-.264-.107-.236-.108-.268-.33-.025-.17.021-.553.183-.962a4.67 4.67 0 0 1 .725-1.192c.29-.348.617-.59.705-.626.142-.057.176-.05.22-.04.045.011.127.052.263.17.235.201.56.671.92 1.161.354.484.791 1.08 1.543 1.33.8.267 1.784-.052 2.671-.846 1.594-1.424 2.235-3.317 2.714-5.051zm11.705 7.023c-.02.014.042-.002.042 0l-.008.035c.05-.2-.028-.04-.034-.035zM79.472 122.45a.198.198 0 0 1 .005.023v.014c-.002-.01-.003-.03-.005-.037zm-.29.732-.006.01-.044.027c.016-.01.033-.024.05-.036z" style="color:#000;fill:#282828;stroke-width:1.02352;-inkscape-stroke:none" transform="translate(-40.698 -95.175)"/>
+              <path d="M76.694 128.845c-.85-.012-1.668.253-2.434.67-.01.592-.015 1.17.109 1.772.323 1.573.422 3.553-.07 5.147-.247.804-.684 1.535-1.347 1.891-.663.356-1.467.296-2.362-.159-.522-.266-1.059-.62-1.487-.757-.223-.072-.392-.096-.522-.069-.13.027-.232.094-.362.27-.53.719-.681 1.823-.497 2.876.177 1.012.418 1.438.543 1.56.143.137.26.154.604.055.548-.158 1.523-.857 2.573-.972l.02-.002.5.058c.686.081 1.247.562 1.622 1.19.372.62.591 1.37.73 2.136.279 1.532.25 3.16.083 4.232-.14.91-.394 1.72-.632 2.53 1.719-.385 3.485-.692 5.307-.36 1.174.214 2.749.574 3.762 1.977l.088.122.046.159c.162.551.16 1.114.024 1.578-.13.45-.348.772-.533 1.023-.181.246-.336.444-.437.606-.102.16-.141.275-.145.336-.01.17 0 .197.07.315.057.1.186.242.39.366.408.246 1.106.414 1.843.45a7.842 7.842 0 0 0 2.174-.21 4.28 4.28 0 0 0 .822-.296c.218-.106.385-.242.377-.233l.029-.031c.025-.035.05-.072.05-.068 0-.004 0-.017-.003-.05a2.733 2.733 0 0 0-.21-.579c-.26-.548-.839-1.333-.822-2.46.01-.657.27-1.21.598-1.576.32-.357.696-.575 1.074-.736.759-.323 1.57-.418 2.054-.458 1.653-.136 3.252.296 4.755.765.457.142.905.29 1.352.434.325-2.258.902-4.247.598-6.217-.071-.46-.25-1.169-.486-1.684-.238-.518-.495-.762-.675-.779-.351-.032-.716.14-1.174.418-.457.277-1.005.665-1.695.742-.745.082-1.406-.291-1.84-.908-.428-.608-.653-1.394-.754-2.196-.203-1.596.016-3.377.794-4.493.568-.813 1.358-.984 2.024-.835.65.146 1.243.51 1.769.779.524.267.99.413 1.237.365a.527.527 0 0 0 .346-.2c.11-.132.235-.373.37-.798.612-1.918.27-3.894-.246-6.054-2.815-.851-5.49-1.534-8.089-.267a.727.727 0 0 0-.223.148c-.024.028-.018.021-.026.056.001-.003-.01.178.07.44.162.522.611 1.29.911 1.978l.004.009.029.063.024.084V133c.162.635.016 1.297-.274 1.727-.272.404-.618.636-.952.81-.675.353-1.399.484-1.724.533a5.888 5.888 0 0 1-3.973-.795c-.512-.311-.876-.594-1.133-1.02-.282-.466-.318-1.084-.172-1.557.252-.814.715-1.266.971-1.89a.663.663 0 0 0 .047-.14c.001-.013 0-.006-.007-.037a.761.761 0 0 0-.184-.268c-.264-.267-.865-.595-1.54-.826-1.356-.462-3.07-.659-3.583-.686-.062-.002-.121-.006-.178-.006z" style="fill:#282828;fill-opacity:1;stroke:none;stroke-width:.991342;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-40.698 -95.175)"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div id="homelinks" class="default-animation">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fas fa-home"></i> Home</a></li>
+        </ul>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics enlarge morespace">
+          <li data-nav-id="/cloud-native/index.html" class=""><a class="padding" href="/cloud-native/index.html">Cloud Native</a><ul id="subsections-2866baaff5bb361bb69f342bd47bc29a" class="morespace">
+          <li data-nav-id="/cloud-native/docker-main/index.html" class=""><a class="padding" href="/cloud-native/docker-main/index.html">Docker</a></li>
+          <li data-nav-id="/cloud-native/docker-kubernetes-course/index.html" class=""><a class="padding" href="/cloud-native/docker-kubernetes-course/index.html">Docker &amp; Kubernetes</a></li>
+          <li data-nav-id="/cloud-native/docker-course/index.html" class=""><a class="padding" href="/cloud-native/docker-course/index.html">Docker Course</a></li>
+          <li data-nav-id="/cloud-native/kubernetes-course/index.html" class=""><a class="padding" href="/cloud-native/kubernetes-course/index.html">Kubernetes</a></li>
+          <li data-nav-id="/cloud-native/openshift/index.html" class=""><a class="padding" href="/cloud-native/openshift/index.html">OpenShift</a></li></ul></li>
+          <li data-nav-id="/git/index.html" class=""><a class="padding" href="/git/index.html">Git</a><ul id="subsections-346b17b87a1a6c2e7ff1e8f0f4d1b4bd" class="morespace">
+          <li data-nav-id="/git/git-commands/index.html" class=""><a class="padding" href="/git/git-commands/index.html">Git Commands</a></li>
+          <li data-nav-id="/git/git-glossary/index.html" class=""><a class="padding" href="/git/git-glossary/index.html">Git Glossary</a></li>
+          <li data-nav-id="/git/git-tips/index.html" class=""><a class="padding" href="/git/git-tips/index.html">Git Tips</a></li></ul></li>
+          <li data-nav-id="/hugo/index.html" class=""><a class="padding" href="/hugo/index.html">Hugo</a><ul id="subsections-113cf8e677282e463bfca274df11f63e" class="morespace">
+          <li data-nav-id="/hugo/demo/index.html" class=""><a class="padding" href="/hugo/demo/index.html">Demo Page</a></li>
+          <li data-nav-id="/hugo/hugo-main/index.html" class=""><a class="padding" href="/hugo/hugo-main/index.html">Hugo</a></li></ul></li>
+          <li data-nav-id="/nodejs/index.html" class=""><a class="padding" href="/nodejs/index.html">NodeJS</a><ul id="subsections-b1bd79e0bd664192062149ff077a03d3" class="morespace">
+          <li data-nav-id="/nodejs/javascript/index.html" class=""><a class="padding" href="/nodejs/javascript/index.html">JavaScript</a></li>
+          <li data-nav-id="/nodejs/nodejs-main/index.html" class=""><a class="padding" href="/nodejs/nodejs-main/index.html">NodeJS Main</a></li></ul></li>
+          <li data-nav-id="/other/index.html" class=""><a class="padding" href="/other/index.html">Other</a><ul id="subsections-94cf2303bb7e3418ce54e9f29b391e36" class="morespace">
+          <li data-nav-id="/other/data-modelling/index.html" class=""><a class="padding" href="/other/data-modelling/index.html">Data Modelling</a></li>
+          <li data-nav-id="/other/dslab/index.html" class=""><a class="padding" href="/other/dslab/index.html">DSLab</a></li>
+          <li data-nav-id="/other/hums-adapter/index.html" class=""><a class="padding" href="/other/hums-adapter/index.html">HUMS Adapter</a></li>
+          <li data-nav-id="/other/mission-capability/index.html" class=""><a class="padding" href="/other/mission-capability/index.html">Mission Capability (MC) App</a></li>
+          <li data-nav-id="/other/sql/index.html" class=""><a class="padding" href="/other/sql/index.html">SQL Basics</a></li></ul></li>
+          <li data-nav-id="/unix/index.html" class="parent "><a class="padding" href="/unix/index.html">Unix</a><ul id="subsections-b9966786d52dcdebf637b5b17e3665c1" class="morespace">
+          <li data-nav-id="/unix/unix-commands/index.html" class="active"><a class="padding" href="/unix/unix-commands/index.html">UNIX Commands and Tips</a></li></ul></li>
+        </ul>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch">
+              <div class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <label class="a11y-only" for="select-language">Language</label>
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </div>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <div class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <label class="a11y-only" for="select-variant">Theme</label>
+                  <select id="select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                    <option id="auto" value="auto" selected>Auto</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </div>
+              <script>window.variants && variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><button class="padding" onclick="clearHistory();"><i class="fas fa-history fa-fw"></i><span>&nbsp;</span>Clear History</button></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+	    <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1680145457" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1680145457" defer></script>
+    <script src="/js/theme.js?1680145457" defer></script>
+  </body>
+</html>
