@@ -16,19 +16,28 @@ Transactional systems are systems in which message flows are used to accomplish 
 These types of systems often used 3rd Normal Form (3NF) to arrange the data. 3NF is a database schema design which normalised data to help:</description>
     </item>
     <item>
+      <title>Demo Page</title>
+      <link>/other/demo/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/other/demo/index.html</guid>
+      <description>Tables Table Items Details Item Item Item Item Item Item Item Item Item Icons &amp;ldquo;Fontawesome icons (free filter enabled)&amp;rdquo;
+Badge Important Careful now! {{{}}}
+Notice Tabs Warning! Do not rebase public commits, as the commit IDs are changed by this process.</description>
+    </item>
+    <item>
       <title>DSLab</title>
       <link>/other/dslab/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/other/dslab/index.html</guid>
-      <description>DSLab Defence&amp;rsquo;s implementation of Cloud Pak 4 Data. Please note when accessing documentation related to Cloud Pak 4 Data that the Defence implementation does not include all features.
-DS Lab Data Science Lab is a software suite running on an appliance located at VBM (hopefully to be replaced by a new appliance before the end of the financial year). It can be used to run data science models and perform machine learning tasks using various tools such as Jupiter notebook (using python and approved libraries) and SPSS.</description>
+      <description>Defence&amp;rsquo;s implementation of Cloud Pak 4 Data. Please note when accessing documentation related to Cloud Pak 4 Data that the Defence implementation does not include all features.
+Data Science Lab is a software suite running on an appliance located at VBM (hopefully to be replaced by a new appliance before the end of the financial year). It can be used to run data science models and perform machine learning tasks using various tools such as Jupiter notebook (using python and approved libraries) and SPSS.</description>
     </item>
     <item>
       <title>HUMS Adapter</title>
       <link>/other/hums-adapter/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/other/hums-adapter/index.html</guid>
-      <description>HUMS enabled Equipment Health and Usage Monitoring Systems (HUMS) is a generic term given to data collection and analysis activities that are used to help ensure the availability, reliability and safety of vehicles.
+      <description>HUMS-Enabled Equipment Health and Usage Monitoring Systems (HUMS) is a generic term given to data collection and analysis activities that are used to help ensure the availability, reliability and safety of vehicles.
 A number of vehicle fleets (e.g M113, some tanks and G-wagons - soon Bushmasters) are equipped with sensors that feed into the CAN bus (Controller Area Network). A HUMS device sits in front of the CAN bus, duplicating the information required from the data stream.</description>
     </item>
     <item>
@@ -48,8 +57,7 @@ Lethality: The offensive ability of the vehicle (main and secondary armament). M
 SELECT * FROM country; Fetch specific columns from the city table:
 SELECT id, name FROM city; Fetch city names sorted by the rating column in the default ascending order:
 SELECT name FROM city ORDER BY rating [ASC]; Fetch city names sorted by the rating column in descending order:
-SELECT name FROM city ORDER BY rating DESC; Aliases TODO
-Columns SELECT name AS city_name FROM city;</description>
+SELECT name FROM city ORDER BY rating DESC; Aliases Used to give a table or column a temporary name (usually to make it more readable).</description>
     </item>
   </channel>
 </rss>

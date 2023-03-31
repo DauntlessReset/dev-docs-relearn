@@ -42,7 +42,5 @@ hugo
 docker build . -t $IMAGE
 
 # Instantiate container
-docker run -dp 3000:80 --name $CONTAINER $IMAGE 
-
-echo "Site is available at localhost:3000"
+docker run -dp 3000:80 --name $CONTAINER $IMAGE && echo "Site is available at localhost:3000"
 

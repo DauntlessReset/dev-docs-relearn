@@ -7,20 +7,20 @@
     <meta name="generator" content="Relearn 5.12.5+tip">
     <meta name="description" content="Tips and advice for using Git">
     <title>Git Tips :: </title>
-    <link href="/images/favicon.ico?1680146883" rel="icon" type="image/x-icon">
+    <link href="/images/favicon.ico?1680211908" rel="icon" type="image/x-icon">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1680146883" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1680146883" rel="stylesheet">
-    <link href="/css/auto-complete.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1680146883" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1680146883" rel="stylesheet">
-    <link href="/css/fonts.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1680146883" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1680146883" rel="stylesheet">
-    <link href="/css/theme-auto.css?1680146883" rel="stylesheet" id="variant-style">
-    <link href="/css/variant.css?1680146883" rel="stylesheet">
-    <link href="/css/print.css?1680146883" rel="stylesheet" media="print">
-    <link href="/css/ie.css?1680146883" rel="stylesheet">
-    <script src="/js/url.js?1680146883"></script>
-    <script src="/js/variant.js?1680146883"></script>
+    <link href="/css/fontawesome-all.min.css?1680211908" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1680211908" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1680211908" rel="stylesheet">
+    <link href="/css/auto-complete.css?1680211908" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1680211908" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1680211908" rel="stylesheet">
+    <link href="/css/fonts.css?1680211908" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1680211908" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1680211908" rel="stylesheet">
+    <link href="/css/theme-auto.css?1680211908" rel="stylesheet" id="variant-style">
+    <link href="/css/variant.css?1680211908" rel="stylesheet">
+    <link href="/css/print.css?1680211908" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1680211908" rel="stylesheet">
+    <script src="/js/url.js?1680211908"></script>
+    <script src="/js/variant.js?1680211908"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -90,7 +90,14 @@
 <p>To aid development and to ensure that commit messages are concise, it is strongly recommended that each commit is contained to a single issue, such as fixing a bug or implementing something distinct. Refer to the commit message conventions for further information.</p>
 <h3 id="merging-in-collaborative-projects-should-be-done-in-github-via-pull"><strong>Merging in collaborative projects should be done in Github via pull</strong></h3>
 <p>When merging changes into main/master, you should do this via Github instead of merging remotely and pushing the commit to remote. This is so your colleagues have a chance to examine your changes, provide any feedback and catch and issues that may exist.</p>
-<p><em><strong>Please note that while this is normal practice, due to our small team, we do not follow this convention.</strong></em></p>
+<p><em><strong>Please note t</strong></em></p>
+
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fa-fw fas fa-pencil-alt"></i> Note</div>
+  <div class="box-content">
+<p>While this is normal practice, due to our small team, we do not follow this convention.</p>
+  </div>
+</div>
 <h3 id="fetch-early-and-often"><strong>Fetch early and often</strong></h3>
 <p>Use <strong>git fetch -p</strong> or <strong>git fetch &ndash;prune</strong> to update your remote tracking branches often to ensure you know what&rsquo;s in remote and whether to delete any unnecessary local branches. This helps prevent merge hell later on.</p>
 <h3 id="file-naming-conventions"><strong>File naming conventions</strong></h3>
@@ -233,6 +240,7 @@
           <li data-nav-id="/nodejs/nodejs-main/index.html" class=""><a class="padding" href="/nodejs/nodejs-main/index.html">NodeJS Main</a></li></ul></li>
           <li data-nav-id="/other/index.html" class=""><a class="padding" href="/other/index.html">Other</a><ul id="subsections-94cf2303bb7e3418ce54e9f29b391e36" class="morespace">
           <li data-nav-id="/other/data-modelling/index.html" class=""><a class="padding" href="/other/data-modelling/index.html">Data Modelling</a></li>
+          <li data-nav-id="/other/demo/index.html" class=""><a class="padding" href="/other/demo/index.html">Demo Page</a></li>
           <li data-nav-id="/other/dslab/index.html" class=""><a class="padding" href="/other/dslab/index.html">DSLab</a></li>
           <li data-nav-id="/other/hums-adapter/index.html" class=""><a class="padding" href="/other/hums-adapter/index.html">HUMS Adapter</a></li>
           <li data-nav-id="/other/mission-capability/index.html" class=""><a class="padding" href="/other/mission-capability/index.html">Mission Capability (MC) App</a></li>
@@ -278,8 +286,8 @@
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1680146884" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1680146884" defer></script>
-    <script src="/js/theme.js?1680146884" defer></script>
+    <script src="/js/clipboard.min.js?1680211908" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1680211908" defer></script>
+    <script src="/js/theme.js?1680211908" defer></script>
   </body>
 </html>

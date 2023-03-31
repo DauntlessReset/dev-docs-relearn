@@ -7,20 +7,20 @@
     <meta name="generator" content="Relearn 5.12.5+tip">
     <meta name="description" content="A description of the HUMS adapter purpose and structure">
     <title>HUMS Adapter :: </title>
-    <link href="/images/favicon.ico?1680146883" rel="icon" type="image/x-icon">
+    <link href="/images/favicon.ico?1680211908" rel="icon" type="image/x-icon">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1680146883" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1680146883" rel="stylesheet">
-    <link href="/css/auto-complete.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1680146883" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1680146883" rel="stylesheet">
-    <link href="/css/fonts.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1680146883" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1680146883" rel="stylesheet">
-    <link href="/css/theme-auto.css?1680146883" rel="stylesheet" id="variant-style">
-    <link href="/css/variant.css?1680146883" rel="stylesheet">
-    <link href="/css/print.css?1680146883" rel="stylesheet" media="print">
-    <link href="/css/ie.css?1680146883" rel="stylesheet">
-    <script src="/js/url.js?1680146883"></script>
-    <script src="/js/variant.js?1680146883"></script>
+    <link href="/css/fontawesome-all.min.css?1680211908" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1680211908" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1680211908" rel="stylesheet">
+    <link href="/css/auto-complete.css?1680211908" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1680211908" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1680211908" rel="stylesheet">
+    <link href="/css/fonts.css?1680211908" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1680211908" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1680211908" rel="stylesheet">
+    <link href="/css/theme-auto.css?1680211908" rel="stylesheet" id="variant-style">
+    <link href="/css/variant.css?1680211908" rel="stylesheet">
+    <link href="/css/print.css?1680211908" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1680211908" rel="stylesheet">
+    <script src="/js/url.js?1680211908"></script>
+    <script src="/js/variant.js?1680211908"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -64,7 +64,7 @@
           <div class="default-animation progress">
             <div class="toc-wrapper"><nav id="TableOfContents">
   <ul>
-    <li><a href="#hums-enabled-equipment">HUMS enabled Equipment</a></li>
+    <li><a href="#hums-enabled-equipment">HUMS-Enabled Equipment</a></li>
     <li><a href="#certificate-management">Certificate Management</a></li>
     <li><a href="#definitions">Definitions</a>
       <ul>
@@ -73,6 +73,7 @@
         <li><a href="#gtfs">GTFS</a></li>
       </ul>
     </li>
+    <li><a href="#other-notes">Other notes</a></li>
   </ul>
 </nav>
             </div>
@@ -86,7 +87,7 @@
           <article class="default">
 <h1 id="hums-adapter">HUMS Adapter</h1>
 
-<h2 id="hums-enabled-equipment">HUMS enabled Equipment</h2>
+<h2 id="hums-enabled-equipment">HUMS-Enabled Equipment</h2>
 <p>Health and Usage Monitoring Systems (HUMS) is a generic term given to data collection and analysis activities that are used to help ensure the availability, reliability and safety of vehicles.</p>
 <p>A number of vehicle fleets (e.g M113, some tanks and G-wagons - soon Bushmasters) are equipped with sensors that feed into the CAN bus (Controller Area Network). A HUMS device sits in front of the CAN bus, duplicating the information required from the data stream. Data measured may relate to oil viscosity, vibration, measured speed and so on. This is telemetry data (telemetry means to measure at a distance).</p>
 <p>The mobile network is used to offload data from vehicles (when in range). If not in range the data packets will queue onboard the vehicle, and will release when a connection is made. The use of the mobile network has to be taken into account regarding OPSEC - e.g. vehicles deployed overseas are stripped of the telemetry computer.</p>
@@ -101,7 +102,8 @@
 <p>An open source message broken written in Java. A message broker is a program that translates a message from the formal messaging protocol of the sender to the formal messaging protocol of the receiver.</p>
 <h3 id="gtfs">GTFS</h3>
 <p>General Transit Feed Specification (GTFS). A GTFS feed is composed of a series of text files collected into a ZIP file.</p>
-<h4 id="other-notes">Other notes</h4>
+<h2 id="other-notes">Other notes</h2>
+<p>TODO - add more content</p>
 <p>boolean flag changed to revoked: true:</p>
 <p>nexus bridge prod and non prod</p>
 <p>nexus-bridge-non-prod-cluster</p>
@@ -208,6 +210,7 @@
           <li data-nav-id="/nodejs/nodejs-main/index.html" class=""><a class="padding" href="/nodejs/nodejs-main/index.html">NodeJS Main</a></li></ul></li>
           <li data-nav-id="/other/index.html" class="parent "><a class="padding" href="/other/index.html">Other</a><ul id="subsections-94cf2303bb7e3418ce54e9f29b391e36" class="morespace">
           <li data-nav-id="/other/data-modelling/index.html" class=""><a class="padding" href="/other/data-modelling/index.html">Data Modelling</a></li>
+          <li data-nav-id="/other/demo/index.html" class=""><a class="padding" href="/other/demo/index.html">Demo Page</a></li>
           <li data-nav-id="/other/dslab/index.html" class=""><a class="padding" href="/other/dslab/index.html">DSLab</a></li>
           <li data-nav-id="/other/hums-adapter/index.html" class="active"><a class="padding" href="/other/hums-adapter/index.html">HUMS Adapter</a></li>
           <li data-nav-id="/other/mission-capability/index.html" class=""><a class="padding" href="/other/mission-capability/index.html">Mission Capability (MC) App</a></li>
@@ -253,8 +256,8 @@
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1680146884" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1680146884" defer></script>
-    <script src="/js/theme.js?1680146884" defer></script>
+    <script src="/js/clipboard.min.js?1680211908" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1680211908" defer></script>
+    <script src="/js/theme.js?1680211908" defer></script>
   </body>
 </html>

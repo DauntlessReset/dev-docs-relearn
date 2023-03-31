@@ -12,7 +12,7 @@
       <guid>/unix/unix-commands/index.html</guid>
       <description>Basic UNIX Commands General syntax of a UNIX command:
 Note: Options may also be called switches or flags, and an argument is also called a parameter.
-Navigation pwd`` - Print working directory (pwd or cwd). Tells you were you are, in what folder. Note that while in Windows the root directory is &amp;quot;C:\&amp;quot;, in UNIX the root directory is designated by &amp;quot;/&amp;quot;, which elsewhere is just used as a separator inside a path.</description>
+Navigation pwd - Print working directory (pwd or cwd). Tells you were you are, in what folder. Note that while in Windows the root directory is &amp;ldquo;C:&amp;quot;, in UNIX the root directory is designated by &amp;ldquo;/&amp;rdquo;, which elsewhere is just used as a separator inside a path.</description>
     </item>
   </channel>
 </rss>

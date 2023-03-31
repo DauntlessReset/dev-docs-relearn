@@ -37,7 +37,7 @@ Git TipsTips and advice for using Git</description>
       <link>/hugo/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/hugo/index.html</guid>
-      <description>Demo PageThis is a demo page to showcase some of the shortcodes available in Relearn
+      <description>Demo PageThis is a demo page to showcase some of the shortcodes available in Relearn (a Hugo template)
 HugoInformation about Hugo, the static site generator (SSG)</description>
     </item>
     <item>
@@ -54,6 +54,7 @@ NodeJS MainNodeJS note derived from NodeJS - Novice to Ninja</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/other/index.html</guid>
       <description>Data ModellingBasic concepts and definitions of Data Modelling
+Demo PageThis is a demo page to showcase some of the shortcodes available in Relearn
 DSLabAn overview of DSLab, the Defence implementation of Cloud Pak 4 Data
 HUMS AdapterA description of the HUMS adapter purpose and structure
 Mission Capability (MC) AppA brief overview of the Mission Capability App in development

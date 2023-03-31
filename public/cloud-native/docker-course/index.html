@@ -7,20 +7,20 @@
     <meta name="generator" content="Relearn 5.12.5+tip">
     <meta name="description" content="Information from KodeKloud&#39;s course *Docker Training Course for the Absolute Beginner*">
     <title>Docker Course :: </title>
-    <link href="/images/favicon.ico?1680146883" rel="icon" type="image/x-icon">
+    <link href="/images/favicon.ico?1680211908" rel="icon" type="image/x-icon">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1680146883" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1680146883" rel="stylesheet">
-    <link href="/css/auto-complete.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1680146883" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1680146883" rel="stylesheet">
-    <link href="/css/fonts.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1680146883" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1680146883" rel="stylesheet">
-    <link href="/css/theme-auto.css?1680146883" rel="stylesheet" id="variant-style">
-    <link href="/css/variant.css?1680146883" rel="stylesheet">
-    <link href="/css/print.css?1680146883" rel="stylesheet" media="print">
-    <link href="/css/ie.css?1680146883" rel="stylesheet">
-    <script src="/js/url.js?1680146883"></script>
-    <script src="/js/variant.js?1680146883"></script>
+    <link href="/css/fontawesome-all.min.css?1680211908" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1680211908" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1680211908" rel="stylesheet">
+    <link href="/css/auto-complete.css?1680211908" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1680211908" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1680211908" rel="stylesheet">
+    <link href="/css/fonts.css?1680211908" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1680211908" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1680211908" rel="stylesheet">
+    <link href="/css/theme-auto.css?1680211908" rel="stylesheet" id="variant-style">
+    <link href="/css/variant.css?1680211908" rel="stylesheet">
+    <link href="/css/print.css?1680211908" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1680211908" rel="stylesheet">
+    <script src="/js/url.js?1680211908"></script>
+    <script src="/js/variant.js?1680211908"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -102,6 +102,7 @@
         <li><a href="#kubernetes">Kubernetes</a></li>
       </ul>
     </li>
+    <li><a href="#docker-tips">Docker Tips</a></li>
   </ul>
 </nav>
             </div>
@@ -270,10 +271,10 @@ worker:
 </code></pre><p><code>docker-compose up</code></p>
 <p>Instead of running a bunch of build commands, you can just put them into a docker compose:</p>
 <p>
-<a href="#image-17874bdbd9e64947415fd217361034de" class="lightbox-link">
+<a href="#image-7e1251b8e38a660194945a1cf446b255" class="lightbox-link">
 <img src="/images/docker_compose.jpeg" alt="image" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-17874bdbd9e64947415fd217361034de">
+<a href="javascript:history.back();" class="lightbox" id="image-7e1251b8e38a660194945a1cf446b255">
 <img src="/images/docker_compose.jpeg" alt="image" class="lightbox-image" loading="lazy">
 </a></p>
 <h3 id="links">Links</h3>
@@ -342,21 +343,20 @@ networks:
 <p><code>docker service create --replicas=9 my-web-server</code></p>
 <h3 id="kubernetes">Kubernetes</h3>
 <p><code>kubectl run --replicas=1000 my-web-server</code></p>
-<pre tabindex="0"><code class="language-kubectl" data-lang="kubectl">
-```kubectl rolling-update my-web-server --rollback```
+<p><code>kubectl rolling-update my-web-server --image=web-server:2</code></p>
+<p><code>kubectl rolling-update my-web-server --rollback</code></p>
+<p>A node is a machine (physical or virtual) in which kubernetes software runs. A cluster is a set of nodes grouped together.</p>
+<p>The master is a node with control components installed, which is responsible for orchestration.</p>
+<h2 id="docker-tips">Docker Tips</h2>
+<ul>
+<li>
+<p>You don&rsquo;t need to write the whole ID number to refer to a specific container - just enough so that it can be distinctly selected from the other containers</p>
+</li>
+<li>
+<p>Give the exact version when specifying an image in a build file - if a future image breaks support, you will still have a working build.</p>
+</li>
+</ul>
 
-A node is a machine (physical or virtual) in which kubernetes software runs. A cluster is a set of nodes grouped together. 
-
-The master is a node with control components installed, which is responsible for orchestration. 
-
-## Docker Tips
-
-- you don&#39;t need to write the whole ID number to refer to a specific container - just enough so that it can be distinctly selected from the other containers 
-
-- specify version
-
-capture best practices for docker 
-</code></pre>
             <footer class="footline">
             </footer>
           </article>
@@ -456,6 +456,7 @@ capture best practices for docker
           <li data-nav-id="/nodejs/nodejs-main/index.html" class=""><a class="padding" href="/nodejs/nodejs-main/index.html">NodeJS Main</a></li></ul></li>
           <li data-nav-id="/other/index.html" class=""><a class="padding" href="/other/index.html">Other</a><ul id="subsections-94cf2303bb7e3418ce54e9f29b391e36" class="morespace">
           <li data-nav-id="/other/data-modelling/index.html" class=""><a class="padding" href="/other/data-modelling/index.html">Data Modelling</a></li>
+          <li data-nav-id="/other/demo/index.html" class=""><a class="padding" href="/other/demo/index.html">Demo Page</a></li>
           <li data-nav-id="/other/dslab/index.html" class=""><a class="padding" href="/other/dslab/index.html">DSLab</a></li>
           <li data-nav-id="/other/hums-adapter/index.html" class=""><a class="padding" href="/other/hums-adapter/index.html">HUMS Adapter</a></li>
           <li data-nav-id="/other/mission-capability/index.html" class=""><a class="padding" href="/other/mission-capability/index.html">Mission Capability (MC) App</a></li>
@@ -501,8 +502,8 @@ capture best practices for docker
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1680146884" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1680146884" defer></script>
-    <script src="/js/theme.js?1680146884" defer></script>
+    <script src="/js/clipboard.min.js?1680211908" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1680211908" defer></script>
+    <script src="/js/theme.js?1680211908" defer></script>
   </body>
 </html>

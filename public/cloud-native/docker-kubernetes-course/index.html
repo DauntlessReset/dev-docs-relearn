@@ -7,20 +7,20 @@
     <meta name="generator" content="Relearn 5.12.5+tip">
     <meta name="description" content="Notes from course on FreeCodeCamp - *Docker and Kubernetes* - Guy Barrette">
     <title>Docker &amp; Kubernetes :: </title>
-    <link href="/images/favicon.ico?1680146883" rel="icon" type="image/x-icon">
+    <link href="/images/favicon.ico?1680211908" rel="icon" type="image/x-icon">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1680146883" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1680146883" rel="stylesheet">
-    <link href="/css/auto-complete.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1680146883" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1680146883" rel="stylesheet">
-    <link href="/css/fonts.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1680146883" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1680146883" rel="stylesheet">
-    <link href="/css/theme-auto.css?1680146883" rel="stylesheet" id="variant-style">
-    <link href="/css/variant.css?1680146883" rel="stylesheet">
-    <link href="/css/print.css?1680146883" rel="stylesheet" media="print">
-    <link href="/css/ie.css?1680146883" rel="stylesheet">
-    <script src="/js/url.js?1680146883"></script>
-    <script src="/js/variant.js?1680146883"></script>
+    <link href="/css/fontawesome-all.min.css?1680211908" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1680211908" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1680211908" rel="stylesheet">
+    <link href="/css/auto-complete.css?1680211908" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1680211908" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1680211908" rel="stylesheet">
+    <link href="/css/fonts.css?1680211908" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1680211908" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1680211908" rel="stylesheet">
+    <link href="/css/theme-auto.css?1680211908" rel="stylesheet" id="variant-style">
+    <link href="/css/variant.css?1680211908" rel="stylesheet">
+    <link href="/css/print.css?1680211908" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1680211908" rel="stylesheet">
+    <script src="/js/url.js?1680211908"></script>
+    <script src="/js/variant.js?1680211908"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -64,30 +64,26 @@
           <div class="default-animation progress">
             <div class="toc-wrapper"><nav id="TableOfContents">
   <ul>
-    <li><a href="#microservices-architecture">Microservices Architecture</a></li>
-    <li><a href="#monolithic-architecture">Monolithic Architecture</a></li>
-    <li><a href="#microservices">Microservices</a></li>
-    <li><a href="#monolith-to-microservices">Monolith to Microservices</a></li>
-    <li><a href="#microservices-anti-patterns">Microservices Anti-Patterns</a></li>
-    <li><a href="#microservices---benefits">Microservices - Benefits</a></li>
-    <li><a href="#microservices---drawbacks">Microservices - Drawbacks</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#concepts">Concepts</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#yaml">YAML</a>
+    <li><a href="#microservices-concepts">Microservices Concepts</a>
       <ul>
-        <li><a href="#pods-with-yaml">Pods with YAML</a></li>
+        <li><a href="#microservices-architecture">Microservices Architecture</a></li>
+        <li><a href="#monolithic-architecture">Monolithic Architecture</a></li>
+        <li><a href="#microservices">Microservices</a></li>
+        <li><a href="#monolith-to-microservices">Monolith to Microservices</a></li>
+        <li><a href="#microservices-anti-patterns">Microservices Anti-Patterns</a></li>
+        <li><a href="#microservices---benefits">Microservices - Benefits</a></li>
+        <li><a href="#microservices---drawbacks">Microservices - Drawbacks</a></li>
       </ul>
     </li>
-    <li><a href="#controllers-and-replicasets">Controllers and ReplicaSets</a></li>
-    <li><a href="#replicaset">ReplicaSet</a></li>
-    <li><a href="#labels-and-selectors">Labels and Selectors</a>
+    <li><a href="#cloud-native">Cloud Native</a>
       <ul>
-        <li><a href="#scaling-with-replicaset">Scaling with ReplicaSet</a></li>
+        <li><a href="#concepts">Concepts</a></li>
+      </ul>
+    </li>
+    <li><a href="#kubernetes-or-k8s">Kubernetes or K8s</a>
+      <ul>
+        <li><a href="#yaml">YAML</a></li>
+        <li><a href="#controllers-and-replicasets">Controllers and ReplicaSets</a></li>
       </ul>
     </li>
   </ul>
@@ -103,11 +99,11 @@
           <article class="default">
 <h1 id="docker--kubernetes">Docker &amp; Kubernetes</h1>
 
-<h1 id="microservices-concepts">Microservices Concepts</h1>
-<h2 id="microservices-architecture">Microservices Architecture</h2>
+<h2 id="microservices-concepts">Microservices Concepts</h2>
+<h3 id="microservices-architecture">Microservices Architecture</h3>
 <p>A variant of the service-oriented architecture (SOA) structural style - arranges an application as a collection of loosely coupled services.</p>
 <p>In a microservices architecture, services are fine-grained and the protocols are lightweight.</p>
-<h2 id="monolithic-architecture">Monolithic Architecture</h2>
+<h3 id="monolithic-architecture">Monolithic Architecture</h3>
 <ul>
 <li>Built as a single unit</li>
 <li>Deployed as a single unit</li>
@@ -116,7 +112,7 @@
 </ul>
 <p>&mdash;&mdash;-Layers&mdash;&mdash;&ndash;
 Web - Business - Data</p>
-<h2 id="microservices">Microservices</h2>
+<h3 id="microservices">Microservices</h3>
 <ul>
 <li>Segregates functionality into smaller separate services each with a single responsibility</li>
 <li>Scaled out by deploying each service independently</li>
@@ -124,12 +120,12 @@ Web - Business - Data</p>
 <li>Can be worked on more easily by multiple teams</li>
 </ul>
 <p>Scaling up and down is very easy with microservices. Additionally, recovery from crashes etc is much more seamless.</p>
-<h2 id="monolith-to-microservices">Monolith to Microservices</h2>
+<h3 id="monolith-to-microservices">Monolith to Microservices</h3>
 <ul>
 <li>Break your application/system into small units</li>
 <li>Use the <em>strangler pattern</em></li>
 </ul>
-<h2 id="microservices-anti-patterns">Microservices Anti-Patterns</h2>
+<h3 id="microservices-anti-patterns">Microservices Anti-Patterns</h3>
 <ul>
 <li>Microservices != Magic Pixie Dust</li>
 <li>Risk of unnecessary complexity</li>
@@ -137,7 +133,7 @@ Web - Business - Data</p>
 <li>Risk of complex security</li>
 <li>Take it step by step and have checks in place to ensure you&rsquo;re not doing too much at once and making mistakes</li>
 </ul>
-<h2 id="microservices---benefits">Microservices - Benefits</h2>
+<h3 id="microservices---benefits">Microservices - Benefits</h3>
 <ul>
 <li>Improved fault isolation</li>
 <li>Eliminate vendor or technology lock-in</li>
@@ -145,7 +141,7 @@ Web - Business - Data</p>
 <li>Smaller and faster deployments</li>
 <li>Scalability</li>
 </ul>
-<h2 id="microservices---drawbacks">Microservices - Drawbacks</h2>
+<h3 id="microservices---drawbacks">Microservices - Drawbacks</h3>
 <ul>
 <li>Complexity is added to resolve complexity issues</li>
 <li>Testing may appear simpler but may not be</li>
@@ -156,9 +152,9 @@ Web - Business - Data</p>
 <li>Multiple points of failure</li>
 <li>Security: can be additional risks</li>
 </ul>
-<h1 id="cloud-native">Cloud Native</h1>
+<h2 id="cloud-native">Cloud Native</h2>
 <p>Definition: TODO</p>
-<h2 id="concepts">Concepts</h2>
+<h3 id="concepts">Concepts</h3>
 <ul>
 <li>Speed and agility: instantaneous responsiveness, new features, no downtime, accelerated innovation, rapid release of features, stability/performance</li>
 <li>Architecture - Clean Code, Domain Drive Design, Microservices Principles and Kubernetes Patterns</li>
@@ -169,13 +165,13 @@ Web - Business - Data</p>
 <p>Cloud Native Trail Map (CNCF) - Breaks the journey into measurable steps with key milestones.</p>
 <p>Cloud Native Computing Foundation (CNCF)
 cncf.io</p>
-<h1 id="kubernetes-or-k8s">Kubernetes or K8s</h1>
+<h2 id="kubernetes-or-k8s">Kubernetes or K8s</h2>
 <p>Declarative object configuration files</p>
-<h2 id="yaml">YAML</h2>
+<h3 id="yaml">YAML</h3>
 <p>Dictionary: unordered collection
 List: ordered collection</p>
 <p>Lines beginning with a <code>#</code> are comments.</p>
-<h3 id="pods-with-yaml">Pods with YAML</h3>
+<h4 id="pods-with-yaml">Pods with YAML</h4>
 <p>Kubernetes uses YAML files to creates objects.</p>
 <p>Always contains 4 fields (required):</p>
 <pre tabindex="0"><code>apiVersion:
@@ -201,7 +197,7 @@ spec:
 </code></pre><pre tabindex="0"><code>kubectl get pods
 </code></pre><pre tabindex="0"><code>kubectl describe pod myapp-pod
 </code></pre><p>kubectl edit pod <!-- raw HTML omitted --> - shows full yaml file generated by kubernetes</p>
-<h2 id="controllers-and-replicasets">Controllers and ReplicaSets</h2>
+<h3 id="controllers-and-replicasets">Controllers and ReplicaSets</h3>
 <p>To prevent users from losing access to our application, we like to have multiple run pods at the same time.</p>
 <p>The Replication Controller helps us to run multiple instances of a pod in the same cluster, thus providing high availability. Even with a single pod, it helps by bringing up a new pod when one fails, as it always ensures that the correct number of pods is running.</p>
 <p>It also helps with load balancing, spreading the load across multiple pods and nodes.</p>
@@ -230,10 +226,10 @@ spec:                    # rep controller
 <p><code>kubectl create -f rc-definition.yml</code></p>
 <p><code>kubectl get replicationcontroller</code></p>
 <p><code>kubectl get pods</code></p>
-<h2 id="replicaset">ReplicaSet</h2>
+<h4 id="replicaset">ReplicaSet</h4>
 <p>Now <code>apps/v1</code>.</p>
 <p><code>selector</code> allows you to specify other pods that were not covered in the replica set definition - if you skip it, it will just cover the ones in the definition (it is not required in Replica Controller, but <strong>is</strong> required in Replica Set).</p>
-<h2 id="labels-and-selectors">Labels and Selectors</h2>
+<h4 id="labels-and-selectors">Labels and Selectors</h4>
 <p>Labels are used to ensure we can keep track of pods. For instance, our pod may be labeled as such:</p>
 <pre tabindex="0"><code>metadata:
   name: myapp-pod
@@ -244,13 +240,13 @@ spec:                    # rep controller
 <pre tabindex="0"><code>selector: 
   matchLabels:
     tier: front-end
-</code></pre><h3 id="scaling-with-replicaset">Scaling with ReplicaSet</h3>
+</code></pre><h4 id="scaling-with-replicaset">Scaling with ReplicaSet</h4>
 <ol>
 <li>Can update the number of replicas in the replicaset-definition.yaml (e.g. change 3 to 6), then run the replace command:</li>
 </ol>
 <pre tabindex="0"><code>kubectl replace -f replicaset-definition.yml```
 </code></pre><ol start="2">
-<li></li>
+<li>Can scale directly from the command line without touching the YAML file:</li>
 </ol>
 <pre tabindex="0"><code>kubectl scale --replicas=6 -f replicaset-definition.yml
 </code></pre><pre tabindex="0"><code>kubectl scale --replicas=6 replicaset myapp-replicaset
@@ -354,6 +350,7 @@ spec:                    # rep controller
           <li data-nav-id="/nodejs/nodejs-main/index.html" class=""><a class="padding" href="/nodejs/nodejs-main/index.html">NodeJS Main</a></li></ul></li>
           <li data-nav-id="/other/index.html" class=""><a class="padding" href="/other/index.html">Other</a><ul id="subsections-94cf2303bb7e3418ce54e9f29b391e36" class="morespace">
           <li data-nav-id="/other/data-modelling/index.html" class=""><a class="padding" href="/other/data-modelling/index.html">Data Modelling</a></li>
+          <li data-nav-id="/other/demo/index.html" class=""><a class="padding" href="/other/demo/index.html">Demo Page</a></li>
           <li data-nav-id="/other/dslab/index.html" class=""><a class="padding" href="/other/dslab/index.html">DSLab</a></li>
           <li data-nav-id="/other/hums-adapter/index.html" class=""><a class="padding" href="/other/hums-adapter/index.html">HUMS Adapter</a></li>
           <li data-nav-id="/other/mission-capability/index.html" class=""><a class="padding" href="/other/mission-capability/index.html">Mission Capability (MC) App</a></li>
@@ -399,8 +396,8 @@ spec:                    # rep controller
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1680146884" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1680146884" defer></script>
-    <script src="/js/theme.js?1680146884" defer></script>
+    <script src="/js/clipboard.min.js?1680211908" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1680211908" defer></script>
+    <script src="/js/theme.js?1680211908" defer></script>
   </body>
 </html>

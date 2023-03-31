@@ -7,20 +7,20 @@
     <meta name="generator" content="Relearn 5.12.5+tip">
     <meta name="description" content="UNIX Commands and Tips">
     <title>UNIX Commands and Tips :: </title>
-    <link href="/images/favicon.ico?1680146883" rel="icon" type="image/x-icon">
+    <link href="/images/favicon.ico?1680211908" rel="icon" type="image/x-icon">
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1680146883" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1680146883" rel="stylesheet">
-    <link href="/css/auto-complete.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1680146883" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1680146883" rel="stylesheet">
-    <link href="/css/fonts.css?1680146883" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1680146883" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1680146883" rel="stylesheet">
-    <link href="/css/theme-auto.css?1680146883" rel="stylesheet" id="variant-style">
-    <link href="/css/variant.css?1680146883" rel="stylesheet">
-    <link href="/css/print.css?1680146883" rel="stylesheet" media="print">
-    <link href="/css/ie.css?1680146883" rel="stylesheet">
-    <script src="/js/url.js?1680146883"></script>
-    <script src="/js/variant.js?1680146883"></script>
+    <link href="/css/fontawesome-all.min.css?1680211908" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1680211908" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1680211908" rel="stylesheet">
+    <link href="/css/auto-complete.css?1680211908" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1680211908" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1680211908" rel="stylesheet">
+    <link href="/css/fonts.css?1680211908" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1680211908" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1680211908" rel="stylesheet">
+    <link href="/css/theme-auto.css?1680211908" rel="stylesheet" id="variant-style">
+    <link href="/css/variant.css?1680211908" rel="stylesheet">
+    <link href="/css/print.css?1680211908" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1680211908" rel="stylesheet">
+    <script src="/js/url.js?1680211908"></script>
+    <script src="/js/variant.js?1680211908"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -108,33 +108,33 @@
 <h2 id="basic-unix-commands">Basic UNIX Commands</h2>
 <p>General syntax of a UNIX command:</p>
 <p>
-<a href="#image-3f4913b5094664dc22dbc1dce6339dc7" class="lightbox-link">
+<a href="#image-19fba7292e73747d334355c4043ef82c" class="lightbox-link">
 <img src="/images/bash-cmd-syntax.jpeg" alt="Bash Command Syntax" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-3f4913b5094664dc22dbc1dce6339dc7">
+<a href="javascript:history.back();" class="lightbox" id="image-19fba7292e73747d334355c4043ef82c">
 <img src="/images/bash-cmd-syntax.jpeg" alt="Bash Command Syntax" class="lightbox-image" loading="lazy">
 </a></p>
 <p><em>Note: Options may also be called switches or flags, and an argument is also called a parameter.</em></p>
 <h3 id="navigation">Navigation</h3>
-<p><code>pwd`` - Print working directory (pwd or cwd). Tells you were you are, in what folder. Note that while in Windows the root directory is &quot;C:\&quot;, in UNIX the root directory is designated by &quot;/&quot;, which elsewhere is just used as a separator inside a path. So the the directory </code>/home/giles<code>really means</code>root/home/giles```.</p>
+<p><code>pwd</code> - Print working directory (pwd or cwd). Tells you were you are, in what folder. Note that while in Windows the root directory is &ldquo;C:&quot;, in UNIX the root directory is designated by &ldquo;/&rdquo;, which elsewhere is just used as a separator inside a path. So the the directory <code>/home/giles</code> really means <code>root/home/giles</code>.</p>
 <p><code>cd &lt;directory-name&gt;</code></p>
 <p>Change the present working directory (pwd) to that specified.</p>
 <p><code>cd</code> or <code>cd ~</code>          - Return to your home directory.</p>
 <p><code>cd ..</code>                     - Go up one directory (e.g. go into the parent folder of your <strong>pwd</strong>). One <code>.</code> simply means the current working directory.</p>
-<p><code>cd -</code>                      - Go <em>back</em> one directory, even if this is not the parent of the pwd.</p>
+<p><code>cd -</code>                      - Go <em>back</em> one directory, even if this is not the parent of the cwd.</p>
 <p><code>cd /&lt;folder&gt;</code>              - Dive into a folder in the root directory (specified by &ldquo;/&rdquo;).</p>
-<p><code>cd folder/file.txt</code>        - Relative directory (local address based on pwd).</p>
+<p><code>cd folder/file.txt</code>        - Relative directory (local address based on cwd).</p>
 <p><code>cd /bin/nano</code>              - Absolute directory (from root).</p>
 <p><code>cd ~/data</code>                 - The tilde (<code>~</code>) character can be used at the start of a path to represent the current user&rsquo;s home directory.</p>
 <p><code>cat &lt;file&gt;</code> - Print the contents of a file to the console.</p>
-<p><code>less &lt;file&gt;</code> - Displays a screen of the file and then stops. You can go forward one screen by pressing <code>Space</code>, and back by pressing <code>b</code>. Press <code>q</code> will quit.</p>
+<p><code>less &lt;file&gt;</code> - Displays a screen of the file and then stops. You can go forward one screen by pressing <code>Space</code>, and back by pressing <code>b</code>. Press <code>q</code> to quit.</p>
 <p><code>clear</code> - Clears the terminal. Useful if things are getting too cluttered. You can still access previous commands with the arrow keys, or by scrolling in your terminal.</p>
 <h3 id="listing-files-and-folders">Listing files and folders</h3>
 <p><code>ls</code></p>
 <p>List directories and files in the present working directory.</p>
-<p><code>-a</code> - Shows all files and folders, including those hidden. Hidden files are prefixed with a &ldquo;.&rdquo;. <code>./</code> refers to the current working directory, while <code>../</code> refers to the parent of the current working directory.</p>
+<p><code>-a</code> - Shows all files and folders, including those hidden. Hidden files are prefixed with a <code>.</code>. <code>./</code> refers to the current working directory, while <code>../</code> refers to the parent of the current working directory.</p>
 <p><code>-l</code> - Displays files and directories in list format.</p>
-<p><code>-t</code> - Sorts items by time, with those most currently modified at the top.</p>
+<p><code>-t</code> - Sorts items by time, with those most recently modified at the top.</p>
 <p><code>-r</code> - Displays list in reverse order.</p>
 <p><code>-s</code> - Displays size of files and directories alongside the names. Note that size will be returned in <em>blocks</em>.</p>
 <p><code>-S</code> - Sorts the files and directories by size.</p>
@@ -153,7 +153,7 @@
 <p><code>mv folder/file.txt .</code> - Moves the file into the current working directory.</p>
 <p><code>cp &lt;file&gt; &lt;file-copy&gt;</code></p>
 <p>Same as move but also leaves the original copy of the file as is. Useful for leaving a backup. Can also copy multiple files to a single directory, e.g. <code>cp basilisk.dat minotaur.dat unicorn.dat backup/</code>.</p>
-<p><code>cp -r thesis thesis_backup</code> - Copies a directory and all its contents (recursive option -r).</p>
+<p><code>cp -r thesis thesis_backup</code> - Copies a directory and all its contents (recursive option <code>-r</code>).</p>
 <p><code>rm filename.txt</code> - Deletes a file permanently. To prompt for confirmation, use the <code>-i</code> flag (<code>--interactive</code>).</p>
 <p>To remove directories, use the option <code>-r</code>.</p>
 <h3 id="grep">Grep</h3>
@@ -161,14 +161,14 @@
 <p><code>grep &lt;search-term&gt; &lt;file&gt;</code></p>
 <p>Returns all lines in a file that contain the search string.</p>
 <p><code>-i</code> - Ignore case.</p>
-<p><code>-w</code> - This restricts matches to lines containing a word on its own. E.g. <code>grep The haiku.txt</code> will return lines with the word &lsquo;Thesis&rsquo;, whereas ``grep -w The haiku.txt``` will not.</p>
+<p><code>-w</code> - This restricts matches to lines containing a word on its own. E.g. <code>grep The haiku.txt</code> will return lines with the word &lsquo;Thesis&rsquo;, whereas <code>grep -w The haiku.txt</code> will not.</p>
 <p><code>-v</code> - Return all files/lines that <strong>do not</strong> contain the term (exclude).</p>
 <p><code>-n</code> - This numbers the lines that match.</p>
 <p><code>-r</code> - <code>grep</code> will search for a pattern recursively through a set of files or subdirectories, e.g. <code>grep -r Yesterday .</code>.</p>
 <p><code>-o</code> - Short for <code>--only-matching</code>. Prints only the matched parts of an empty line, with each such part on a separate output line. e.g if the line <code>Rex the dog was a good dog</code> was searched with <code>grep -o dog file.txt</code>, the result would be:</p>
 <pre tabindex="0"><code>dog
 dog
-</code></pre><p>e.g. <code>ls | grep -i test</code> will return all files in the pwd that contain the word test in their name, regardless of case.</p>
+</code></pre><p>e.g. <code>ls | grep -i test</code> will return all files in the cwd that contain the word test in their name, regardless of case.</p>
 <p>You can combine <code>grep</code> and <code>find</code>. This expression finds all the text files in the CWD containing the word &ldquo;searching&rdquo;:</p>
 <pre tabindex="0"><code>grep &#34;searching&#34; $(find . -name &#34;*.txt&#34;)
 </code></pre><p>It is important to note that the shell first resolves whatever is inside <code>$()</code> and then feeds that into the external command as an argument.</p>
@@ -229,14 +229,20 @@ the above example used multiple escapes:</p>
 <p><code>uniq &lt;file&gt;</code> - The <code>uniq</code> command filters out <strong>adjacent</strong> matching lines in a file.</p>
 <p><code>cut -d , -f 2 animals.csv | sort | uniq</code> - Will return only unique animals from the list. To return a count of the number of occurrences of each unique animal, use the <code>uniq -c</code> command.</p>
 <h3 id="redirecting-output">Redirecting output</h3>
-<p>You can redirect the output of a command using &lsquo;&gt;&rsquo;.</p>
+<p>You can redirect the output of a command using <code>&gt;</code>.</p>
 <p><code>ls &gt; filename</code> will create a file that contains the output of the <code>ls</code> command.</p>
 <p><code>&gt;&gt;</code> is similar to the previous command but will append to the end of the file.</p>
 <p><code>1&gt;</code> will output the exit code to a file e.g. 0 for success, anything else if the command fails.</p>
 <p><code>2&gt;</code> will output only the error messages to the file.</p>
 <p>If you ever want to ignore the output of a command you can redirect it to the void (/dev/null).</p>
-<p><em>Note: It is a very bad idea to try redirecting the output of a command that operates on a file to the same file. This may give incorrect results and/or delete the contents of <code>lengths.txt</code></em>.</p>
 <p>Note that this operation (<code>&gt;</code>) overwrites the output file if it already exists, whereas <code>&gt;&gt;</code> simply appends to the file (if it already exists - otherwise, the result is the same).</p>
+
+<div class="box notices cstyle warning">
+  <div class="box-label"><i class="fa-fw fas fa-skull"></i> Warning</div>
+  <div class="box-content">
+<p>It is a very bad idea to try redirecting the output of a command that operates on a file to the same file. This may give incorrect results and/or delete the contents of the file.</p>
+  </div>
+</div>
 <h3 id="wildcards">Wildcards</h3>
 <p><code>*</code> is a <strong>wildcard</strong>, which represents zero or more characters. For example:</p>
 <p><code>*.png</code> represents <code>alien.png</code>, <code>bigfoot.png</code>, etc. Because it can represent no characters, <code>*ethane</code> would return <code>ethane</code> and <code>methane</code>.</p>
@@ -246,10 +252,10 @@ the above example used multiple escapes:</p>
 <h3 id="permissions">Permissions</h3>
 <p><code>chmod a+rwx &lt;filename&gt;</code></p>
 <p>
-<a href="#image-a719c3e123dedb3a360f2271494aa1dd" class="lightbox-link">
+<a href="#image-4b5a04fa3af73e4f0840cc102622d41c" class="lightbox-link">
 <img src="/images/permissions.jpeg" alt="image" style="height: auto; width: auto;" loading="lazy">
 </a>
-<a href="javascript:history.back();" class="lightbox" id="image-a719c3e123dedb3a360f2271494aa1dd">
+<a href="javascript:history.back();" class="lightbox" id="image-4b5a04fa3af73e4f0840cc102622d41c">
 <img src="/images/permissions.jpeg" alt="image" class="lightbox-image" loading="lazy">
 </a></p>
 <p>When you use a command such as <code>ls -ltr</code> you will see that each file has a string prefix with lots of letters. The first character relates to the nature of the file (d indicating directory) while the rest relates to permissions.</p>
@@ -267,7 +273,7 @@ the above example used multiple escapes:</p>
 <p>7: (111) Read, write, and execute permissions.</p>
 <h3 id="aliases">Aliases</h3>
 <p><code>alias &lt;shortcut&gt;=&quot;&lt;command&gt;&quot;</code></p>
-<p>Create a new alias (a shortcut command for a longer expression) e.g. ```alias list=&ldquo;ls -ltr&rdquo;.</p>
+<p>Create a new alias (a shortcut command for a longer expression) e.g. <code>alias list=&quot;ls -ltr&quot;</code>.</p>
 <h3 id="ssh">SSH</h3>
 <p><code>ssh &lt;address&gt;</code></p>
 <p>Allows a connection to a remote computer (specified by &lt;address&gt;).</p>
@@ -489,6 +495,7 @@ done
           <li data-nav-id="/nodejs/nodejs-main/index.html" class=""><a class="padding" href="/nodejs/nodejs-main/index.html">NodeJS Main</a></li></ul></li>
           <li data-nav-id="/other/index.html" class=""><a class="padding" href="/other/index.html">Other</a><ul id="subsections-94cf2303bb7e3418ce54e9f29b391e36" class="morespace">
           <li data-nav-id="/other/data-modelling/index.html" class=""><a class="padding" href="/other/data-modelling/index.html">Data Modelling</a></li>
+          <li data-nav-id="/other/demo/index.html" class=""><a class="padding" href="/other/demo/index.html">Demo Page</a></li>
           <li data-nav-id="/other/dslab/index.html" class=""><a class="padding" href="/other/dslab/index.html">DSLab</a></li>
           <li data-nav-id="/other/hums-adapter/index.html" class=""><a class="padding" href="/other/hums-adapter/index.html">HUMS Adapter</a></li>
           <li data-nav-id="/other/mission-capability/index.html" class=""><a class="padding" href="/other/mission-capability/index.html">Mission Capability (MC) App</a></li>
@@ -534,8 +541,8 @@ done
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1680146884" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1680146884" defer></script>
-    <script src="/js/theme.js?1680146884" defer></script>
+    <script src="/js/clipboard.min.js?1680211908" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1680211908" defer></script>
+    <script src="/js/theme.js?1680211908" defer></script>
   </body>
 </html>
